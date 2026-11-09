@@ -12,8 +12,8 @@
 
 | STT | Họ và tên        | MSSV        | Vai trò trong nhóm | Tài khoản GitHub |
 | --: | ---------------- | ----------- | ------------------ | ---------------- |
-|   1 | Ngô Gia Bảo      | 2A202603482 | Nhóm trưởng        | b-baocode        |
-|   2 | Nguyễn Văn Ba    | 2A202603489 |                    | xtraiter         |
+|   1 | Ngô Gia Bảo      | 2A202603482 | Nhóm trưởng, điều phối, phụ trách kiểm chứng và research | b-baocode        |
+|   2 | Nguyễn Văn Ba    | 2A202603489 | Vẽ quy trình, viết Problem Statement | xtraiter         |
 |   3 | Nguyễn Quang Duy | 2A202603462 |                    | nduy120505       |
 |   4 | Nguyễn Thị Dung  | 2A202603508 |                    | zoesayhii        |
 
@@ -26,16 +26,45 @@ Gợi ý vai trò (một người có thể giữ nhiều vai): điều phối t
 | Checkpoint                                 | Người chính | Người hỗ trợ | Sản phẩm                                       |
 | ------------------------------------------ | ----------- | ------------ | ---------------------------------------------- |
 | CP3 — Hội tụ nhóm                          | Ngô Gia Bảo |              | Cluster, cây OST, bảng chấm điểm               |
-| CP4 — Kiểm chứng                           |             |              | Assumption map, snapshot hoặc survey           |
-| CP4 — Research                             |             |              | Bảng research có link                          |
-| CP5 — Quy trình trước/sau                  |             |              | Quy trình + bảng before/after                  |
-| CP5 — Problem Statement v0                 |             |              | Problem Statement v0                           |
-| CP6 — Mức can thiệp + Problem Statement v1 |             |              | Ma trận, AI Canvas, eval, Problem Statement v1 |
-| CP6 — Quyết định                           |             |              | 4 rủi ro + Go/Not Yet/No-Go                    |
+| CP4 — Kiểm chứng                           | Ngô Gia Bảo |              | Assumption map, snapshot hoặc survey           |
+| CP4 — Research                             | Ngô Gia Bảo |              | Bảng research có link                          |
+| CP5 — Quy trình trước/sau                  | Nguyễn Văn Ba |              | Quy trình + bảng before/after                  |
+| CP5 — Problem Statement v0                 | Nguyễn Văn Ba |              | Problem Statement v0                           |
+| CP6 — Mức can thiệp + Problem Statement v1 | Nguyễn Văn Ba |              | Ma trận, AI Canvas, eval, Problem Statement v1 |
+| CP6 — Quyết định                           | Nguyễn Văn Ba |              | 4 rủi ro + Go/Not Yet/No-Go                    |
 
 ## Cá nhân
 
 Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `HoVaTen-MSSV`.
+
+### NgoGiaBao-2A202603482
+
+**Phần việc phụ trách:**
+
+- Nhóm trưởng: tạo repo chung, điều phối nhóm
+- CP1–CP2 cá nhân: scan problem, viết Problem Card kèm quy trình nháp
+- CP3: dẫn buổi hội tụ nhóm
+- CP4: kiểm chứng và research
+
+**Đóng góp cụ thể** (mình đã làm gì, ra sản phẩm gì):
+
+- CP3: tổng hợp pitch, gom cluster, dựng cây OST và bảng chấm điểm shortlist trong `group_report.md`
+- CP4: soạn bộ câu hỏi phỏng vấn, mẫu snapshot và bổ sung nguồn research cho `group_report.md`
+- Viết ghi chú research CP4 riêng: `report/assets/cp4-research-ho-tro-su-co-tu-doi-pin.md`
+- Phát hiện repo nhóm đặt tên `Day02` sai mẫu `DAY02` và đổi tên trong buổi lab
+
+**Bằng chứng** (phần nào trong `group_report.md`, file nào trong `report/assets/`, commit nào):
+
+- `report/individual/2A202603482_NgoGiaBao.md`
+- `report/assets/cp4-research-ho-tro-su-co-tu-doi-pin.md`
+- Commit "CP3: pitch, cluster, OST va cham diem shortlist"
+- Commit "CP4: bo cau hoi phong van, mau snapshot, bo sung nguon research"
+- Commit "Add CP1-CP2 individual report and CP4 research notes (NgoGiaBao)"
+
+**Điều mình học được từ phần nhóm:**
+
+- Cách làm việc nhóm: phân công theo checkpoint, mỗi người làm phần của mình rồi gộp vào báo cáo chung
+- Cách research thông tin: tìm nguồn có link và ngày đăng, tự mở lại từng nguồn để kiểm trước khi đưa vào báo cáo
 
 ### NguyenVanBa-2A202603489
 
