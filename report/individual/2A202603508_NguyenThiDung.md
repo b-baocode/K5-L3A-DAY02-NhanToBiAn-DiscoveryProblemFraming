@@ -227,4 +227,4 @@ Chuỗi bài toán của nhóm bắt đầu từ việc nhận diện problem th
 
 ## 7. Tài liệu tham khảo
 
--
+- Tài liệu đề bài và template hướng dẫn Lab Day 02 (K5-L3A-Day02-NhanToBiAn-DiscoveryProblemFraming).
