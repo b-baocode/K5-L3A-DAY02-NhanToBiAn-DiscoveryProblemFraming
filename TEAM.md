@@ -6,7 +6,7 @@
 
 - Tên nhóm: NhanToBiAn
 - Candidate problem nhóm chọn (1 câu): Học viên bỏ sót quy định nộp bài (tên repo, tên file, tiêu đề, mục bắt buộc) nằm rải rác ở nhiều file và chỉ phát hiện khi đã sát deadline
-- Quyết định cuối (Go / Not Yet / No-Go): Go, phạm vi nhỏ — Rule (bộ kiểm tự động + checklist), không dùng AI
+- Quyết định cuối (Go / Not Yet / No-Go): Go, phạm vi nhỏ — Rule (rào cản pre-push + Actions kiểm lại + checklist), không dùng AI
 
 ## Thành viên
 
@@ -75,3 +75,5 @@ Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `
 - Commit "idea"
 
 **Điều mình học được từ phần nhóm:**
+
+-
