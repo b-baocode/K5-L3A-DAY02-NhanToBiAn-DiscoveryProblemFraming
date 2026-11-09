@@ -1,4 +1,4 @@
-# Báo cáo cá nhân — 2A202603489_NguyenVanBa
+# Báo cáo cá nhân - 2A202603489_NguyenVanBa
 
 > Đổi tên file theo quy tắc `MSSV_HoTen.md`, ví dụ `20241234_NguyenVanAn.md` (MSSV trước, dấu `_`, họ tên viết liền không dấu). Sửa cả dòng tiêu đề phía trên cho khớp.
 > Template chi tiết và prompt mẫu cho từng mục: [docs/01-worksheet.md](../../docs/01-worksheet.md).
@@ -50,7 +50,7 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 | 2 | #4 Nhân viên quên mật khẩu, không vào được mạng nội bộ | Khi đi làm ng dùng còn chẳng nhứo tên tài khoản mật khẩu | tùy người, thường người nhiều tuối sẽ hay quên |
 | 3 | #5 Shipper chạy vòng lặp vì đơn không xếp theo khu vực | Khi ở tỉnh lẻ phải chờ đơn rất lâu, có khi sang ngày hôm sau | vấn đề này có thể đã được xử lý rồi những gì mình gặp có thể là lý do chủ quan từ shiper |
 
-### Problem Card #1 — Đọc đề lab mất thời gian
+### Problem Card #1 - Đọc đề lab mất thời gian
 
 | Trường | Nội dung |
 |---|---|
@@ -61,9 +61,9 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 | Bottleneck (bước nào, mất bao nhiêu phút) | Bước 4: Đối chiếu qua lại giữa các file, mất khoảng 10 phút vì thông tin về yêu cầu nộp bài nằm rải ở 6–7 file (README, CHECKPOINTS, RUBRIC, RULES, SUBMISSION, worksheet, template), có chỗ chỉ nằm trong ghi chú nhỏ nên phải đọc đi đọc lại |
 | Impact (nếu không giải thì sao) | Mất khoảng 35 phút/lab × 6 lab/tuần ≈ 210 phút/tuần (~3,5 giờ) chỉ để hiểu đề; dễ bỏ sót yêu cầu nhỏ, ví dụ quy tắc đổi tên file `MSSV_HoTen.md` chỉ nằm trong ghi chú đầu template, không đọc kỹ là nộp sai tên |
 | Success metric (baseline → target) | Thời gian từ lúc mở đề đến lúc biết rõ phải nộp gì: từ 35 phút xuống còn 10 phút. Đo bằng: bấm giờ 3 lab đã học |
-| Phương án không dùng AI | Mỗi lab có 1 checklist (file, tên file, mục bắt buộc, deadline) đặt ngay đầu README; học viên đọc theo thứ tự cố định: checklist → worksheet → rubric — ước tính giảm còn khoảng 10–15 phút |
+| Phương án không dùng AI | Mỗi lab có 1 checklist (file, tên file, mục bắt buộc, deadline) đặt ngay đầu README; học viên đọc theo thứ tự cố định: checklist → worksheet → rubric - ước tính giảm còn khoảng 10–15 phút |
 | Giả thuyết về AI (nếu có) | AI có thể làm bước 4: đọc toàn bộ các file đề và sinh ra checklist nộp bài. Tuy nhiên chưa thật sự cần vì đề có cấu trúc khá cố định, người ra đề viết checklist một lần là dùng được, lại tránh rủi ro AI tóm tắt sót ý |
-| Cảm nhận nhanh | No AI — vì nguyên nhân nằm ở cách trình bày đề, một checklist cố định do người ra đề viết đã giải quyết được phần lớn |
+| Cảm nhận nhanh | No AI - vì nguyên nhân nằm ở cách trình bày đề, một checklist cố định do người ra đề viết đã giải quyết được phần lớn |
 
 Quy trình nháp hiện tại:
 
@@ -77,7 +77,7 @@ Bước 4: Đối chiếu qua lại các file để biết phải nộp gì, m�
 Bước 5: Tự tóm lại những gì phải nộp, mất 2 phút
 ```
 
-### Problem Card #2 — Quên mật khẩu, không vào được mạng nội bộ
+### Problem Card #2 - Quên mật khẩu, không vào được mạng nội bộ
 
 | Trường | Nội dung |
 |---|---|
@@ -90,7 +90,7 @@ Bước 5: Tự tóm lại những gì phải nộp, mất 2 phút
 | Success metric (baseline → target) | Thời gian từ lúc bị khóa đến lúc vào lại được: từ 60 phút xuống còn 10 phút. Đo bằng: log yêu cầu của IT và hỏi 5 người bị khóa gần nhất xem mất bao lâu |
 | Phương án không dùng AI | Trang tự đặt lại mật khẩu, xác minh qua số điện thoại hoặc email cá nhân; hướng dẫn in sẵn cách xử lý 3 lỗi hay gặp; nhắc trước 3 ngày khi sắp đến hạn đổi mật khẩu |
 | Giả thuyết về AI (nếu có) | Chưa cần vì 60% yêu cầu là cùng 3 lỗi, mỗi lỗi đều có cách xử lý cố định; trang tự đặt lại mật khẩu là giải pháp có sẵn |
-| Cảm nhận nhanh | Rule — vì các lỗi lặp lại và có cách xử lý rõ ràng, chỉ cần cho người dùng tự làm theo các bước có sẵn |
+| Cảm nhận nhanh | Rule - vì các lỗi lặp lại và có cách xử lý rõ ràng, chỉ cần cho người dùng tự làm theo các bước có sẵn |
 
 Quy trình nháp hiện tại:
 
@@ -104,7 +104,7 @@ Bước 4: Chờ IT phản hồi và xác minh, mất 40 phút. Đây là BOTTLE
 Bước 5: Nhận mật khẩu tạm, đăng nhập và đổi mật khẩu, mất 8 phút
 ```
 
-### Problem Card #3 — Đơn giao chậm vì shipper không xếp đơn theo khu vực
+### Problem Card #3 - Đơn giao chậm vì shipper không xếp đơn theo khu vực
 
 | Trường | Nội dung |
 |---|---|
@@ -117,7 +117,7 @@ Bước 5: Nhận mật khẩu tạm, đăng nhập và đổi mật khẩu, m�
 | Success metric (baseline → target) | Số đơn bị dời sang hôm sau: từ 1–2 đơn/tháng xuống còn 0, hoặc thời gian từ lúc "đang giao" đến lúc nhận: từ 8 giờ xuống còn 4 giờ. Đo bằng: lịch sử đơn trong app, xem giờ "đang giao" và giờ "đã giao" |
 | Phương án không dùng AI | Shipper gom đơn theo xã và xếp tuyến bằng Google Maps; hẹn khung giờ giao sáng hoặc chiều với khách; đặt điểm nhận hàng tập trung ở trung tâm xã |
 | Giả thuyết về AI (nếu có) | Chưa cần vì đã có công cụ xếp tuyến như Google Maps hay app của hãng vận chuyển; vấn đề có thể nằm ở thói quen của shipper hơn là thiếu công cụ |
-| Cảm nhận nhanh | No AI — vì công cụ xếp tuyến đã có sẵn, và bottleneck vẫn chủ yếu là phỏng đoán từ phía khách hàng |
+| Cảm nhận nhanh | No AI - vì công cụ xếp tuyến đã có sẵn, và bottleneck vẫn chủ yếu là phỏng đoán từ phía khách hàng |
 
 Quy trình nháp hiện tại:
 
@@ -143,9 +143,9 @@ Bước 5: Nhận hàng lúc chiều tối hoặc bị dời sang hôm sau
 
 | Điểm yếu AI chỉ ra | Đồng ý? | Đã sửa gì |
 |---|---|---|
-| Card #1: Baseline 30–40 phút/lab là số ước lượng, chưa có số đo thực tế nên chưa đủ tin cậy để làm mốc so sánh | Có — baseline cần dựa trên số đo thực tế | Success metric: chốt mốc cụ thể từ 35 phút xuống còn 10 phút, bổ sung cách đo là bấm giờ 3 lab đã học |
-| Card #2: Actor chưa nhất quán, Job Story ở bước scan viết theo góc IT helpdesk trong khi vấn đề chính nằm ở người quên mật khẩu | Có — mỗi card cần một actor chính rõ ràng | Actor: xác định người dùng quên mật khẩu là actor chính, IT helpdesk là bên chịu ảnh hưởng gián tiếp; Job Story viết lại theo góc người dùng |
-| Card #3: Bottleneck chủ yếu dựa trên phỏng đoán vì khách hàng không quan sát được cách shipper xếp đơn; công cụ xếp tuyến đã có sẵn nên chưa cần AI | Có một phần — cần tách dữ kiện và phỏng đoán, nhưng thời gian chờ giao hàng kéo dài là dữ kiện quan sát được | Bottleneck: tách riêng phần quan sát trực tiếp và phần phỏng đoán chưa kiểm chứng; Cảm nhận nhanh chọn No AI |
+| Card #1: Baseline 30–40 phút/lab là số ước lượng, chưa có số đo thực tế nên chưa đủ tin cậy để làm mốc so sánh | Có - baseline cần dựa trên số đo thực tế | Success metric: chốt mốc cụ thể từ 35 phút xuống còn 10 phút, bổ sung cách đo là bấm giờ 3 lab đã học |
+| Card #2: Actor chưa nhất quán, Job Story ở bước scan viết theo góc IT helpdesk trong khi vấn đề chính nằm ở người quên mật khẩu | Có - mỗi card cần một actor chính rõ ràng | Actor: xác định người dùng quên mật khẩu là actor chính, IT helpdesk là bên chịu ảnh hưởng gián tiếp; Job Story viết lại theo góc người dùng |
+| Card #3: Bottleneck chủ yếu dựa trên phỏng đoán vì khách hàng không quan sát được cách shipper xếp đơn; công cụ xếp tuyến đã có sẵn nên chưa cần AI | Có một phần - cần tách dữ kiện và phỏng đoán, nhưng thời gian chờ giao hàng kéo dài là dữ kiện quan sát được | Bottleneck: tách riêng phần quan sát trực tiếp và phần phỏng đoán chưa kiểm chứng; Cảm nhận nhanh chọn No AI |
 
 ---
 
@@ -153,7 +153,7 @@ Bước 5: Nhận hàng lúc chiều tối hoặc bị dời sang hôm sau
 
 | Hoạt động | Tôi đã làm gì? | Kết quả / ảnh hưởng tới bài nhóm |
 |---|---|---|
-| Pitch Problem Card | | |
+| Pitch Problem Card |  | |
 | Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: | |
 | Nhận phản biện | Câu hỏi tôi nhận được: | Tôi đã sửa gì: |
 | Gom cluster / cây OST | | |

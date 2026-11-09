@@ -5,9 +5,9 @@
 
 ## 1. Thông tin nhóm
 
-- Tên nhóm:
+- Tên nhóm: NhanToBiAn
 - Thành viên: xem `TEAM.md`
-- Candidate problem được chọn (1 câu):
+- Candidate problem được chọn (1 câu): Học viên bỏ sót quy định nộp bài (tên repo, tên file, tiêu đề, mục bắt buộc) nằm rải rác ở nhiều file và chỉ phát hiện khi đã sát deadline
 - Quyết định cuối: Go / Not Yet / No-Go
 
 ---
@@ -196,18 +196,25 @@ Tổng hợp:
 Sơ đồ (ASCII, Mermaid hoặc link ảnh trong `report/assets/`):
 
 ```text
+HIỆN TẠI — mỗi lab, ghép từ card #1, #3 (Bảo) và #4 (Ba)
 
+[1 Mở README: 2–5'] → [2 Đọc RULES/CHECKPOINTS/RUBRIC/SUBMISSION + worksheet: 11–18']
+→ [3 Tự rút quy định nộp bài từ nhiều file: 2–10'] ← BOTTLENECK (bỏ sót tên repo, tên file, tiêu đề, mục bắt buộc)
+→ [4 Làm bài: phần lớn buổi lab]
+→ [5 Tự đối chiếu bài với rubric, sửa mục thiếu: ~60', lặp nhiều vòng]
+→ [6 Kiểm tên file, cấu trúc bằng mắt, commit + nộp: 5–10']   ← lỗi bỏ sót ở bước 3 chỉ lộ ra ở đây, sát deadline
 ```
 
 | Bước | Actor | Input | Output | Thời gian / tần suất | Ghi chú |
 |---:|---|---|---|---|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+| 1 | Học viên | README của đề | Nắm mục tiêu lab | 2–5' / mỗi lab | |
+| 2 | Học viên | RULES, CHECKPOINTS, RUBRIC, SUBMISSION, worksheet | Biết các bước và tiêu chí chấm | 11–18' / mỗi lab | Đề Day 02: 11 file, 1.325 dòng |
+| 3 | Học viên | Các file ở bước 2 + template báo cáo | Danh sách tự ghi "phải nộp gì, đặt tên thế nào" (thường chỉ trong đầu) | 2–10' / mỗi lab | Ước tính lệch nhau giữa Bảo (~15' cả bước 1–3) và Ba (~35') |
+| 4 | Học viên / nhóm | Đề + danh sách ở bước 3 | Bài làm | Phần lớn buổi lab | |
+| 5 | Học viên | Bài làm + RUBRIC | Danh sách mục còn thiếu, bài đã sửa | ~60' (ước tính), lặp nhiều vòng | Day 01: 12 lần lưu từ 20:46 tới 00:22 |
+| 6 | Học viên | Bài đã sửa | Commit + link nộp LMS | 5–10' / mỗi lab | Day 01: commit nộp 00:19; Day 02 codelab: 3/5 thành viên commit cuối sau 21h |
 
-**Bottleneck chính:**
+**Bottleneck chính:** Bước 3, tự rút quy định nộp bài từ 11 file. Bước này không lâu (2–10') nhưng là chỗ sinh ra lỗi: quy định nào bị bỏ sót ở đây thì không có bước nào kiểm lại một cách có hệ thống, chỉ lộ ra khi tự soát bằng mắt ở bước 5–6, sát deadline. Bằng chứng: repo nhóm đặt sai `Day02`, 2/4 file báo cáo cá nhân có tiêu đề chưa khớp tên file (mục 3.2).
 
 ### 4.2. Quy trình tương lai
 
