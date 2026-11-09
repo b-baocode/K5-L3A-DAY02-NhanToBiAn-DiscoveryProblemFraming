@@ -153,13 +153,13 @@ Bước 5: Nhận hàng lúc chiều tối hoặc bị dời sang hôm sau
 
 | Hoạt động | Tôi đã làm gì? | Kết quả / ảnh hưởng tới bài nhóm |
 |---|---|---|
-| Pitch Problem Card |  | |
+| Pitch Problem Card | Pitch 3 card: đọc đề lab mất thời gian, quên mật khẩu mạng nội bộ, shipper giao chậm ở tỉnh; card muốn pitch nhất là card đọc đề lab | Card đọc đề lab được gộp với #1, #3 của Bảo thành cluster A, cũng là candidate nhóm chọn; card quên mật khẩu lọt shortlist 3 candidate |
 | Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: | |
 | Nhận phản biện | Câu hỏi tôi nhận được: | Tôi đã sửa gì: |
 | Gom cluster / cây OST | | |
-| Chọn candidate problem | | |
+| Chọn candidate problem | Đóng góp card #4 vào cluster A; số liệu 35 phút/lab và bottleneck đối chiếu 6–7 file được dùng làm bằng chứng cho Opportunity A | Candidate A được chọn với 33 điểm; ước tính 35 phút lệch với 15 phút của Bảo trở thành tín hiệu phản bác ở mục 3.2 |
 | Kiểm chứng / research | | |
-| Quy trình nhóm | | |
+| Quy trình nhóm | Viết mục 4.1 quy trình hiện tại: ghép card #1, #3 của Bảo và card #4 thành 6 bước, kèm bảng actor, input, output, thời gian | Đặt bottleneck ở bước tự rút quy định nộp bài, khớp với problem đã thu hẹp sau kiểm chứng; nhóm cần chốt lại |
 | Problem Statement | | |
 | Mức can thiệp AI | | |
 | Quyết định | | |
@@ -170,12 +170,12 @@ Bước 5: Nhận hàng lúc chiều tối hoặc bị dời sang hôm sau
 
 | Checkpoint | Tôi dùng AI để làm gì? | AI hữu ích ở đâu? | AI sai hoặc hời hợt ở đâu? | Tôi sửa gì bằng nhận định của mình? |
 |---|---|---|---|---|
-| CP1 Scan | | | | |
-| CP2 Problem Card | | | | |
-| CP4 Research | | | | |
-| CP5 Quy trình | | | | |
-| CP5–6 Problem Statement | | | | |
-| CP6 Mức can thiệp / quyết định | | | | |
+| CP1 Scan | Rà lại phần giữ/bỏ problem sau khi tự scan 5 problem | Chỉ ra cột "Dấu hiệu thật lấy từ đâu" đang trả lời sai câu hỏi (ghi "đang trải qua", "nhiều rule" thay vì nguồn số liệu) | Tự giả định 5 ý là tự nghĩ, các ý ở mục Bỏ là AI gợi ý mà chưa hỏi lại | Ghi rõ nguồn từng dấu hiệu; số 100 ticket/ngày và 25 yêu cầu/tuần ghi là ước lượng, chưa kiểm chứng |
+| CP2 Problem Card | Viết nháp 3 Problem Card từ số liệu ở CP1, rồi đóng vai PM hoài nghi phản biện | Tách được phần quan sát trực tiếp và phần phỏng đoán ở card shipper; chỉ ra actor card quên mật khẩu bị lẫn giữa người dùng và IT | Tự thêm số liệu chưa có thật (Shopee/TikTok Shop, 4 đơn/tháng, thời gian từng bước); đề xuất đo bằng "bấm giờ 3 lab đã học", việc không làm được vì lab đã qua; chốt 35 phút từ khoảng 30–40 phút nhưng vẫn là ước lượng | Sửa lại hành văn, bỏ ngoặc và ký hiệu, bỏ đại từ; giữ số liệu AI thêm ở mức ước tính và ghi rõ chưa kiểm chứng |
+| CP4 Research | Soạn nháp assumption map, câu hỏi phỏng vấn và bảng research có link | Tìm và mở kiểm được link GitHub Classroom autograding, Gradescope, pull request template | Soạn trùng với phần Bảo đã push, không pull bản mới trước khi sửa | Bỏ bản nháp của AI, giữ phần CP4 của Bảo vì kỹ hơn và có số liệu log thật |
+| CP5 Quy trình | Ghép card của Bảo và của mình thành quy trình hiện tại 6 bước ở mục 4.1 | Gom nhanh số liệu từ 3 card và mục 3.2 vào một bảng | Ban đầu đặt bottleneck ở bước đối chiếu bài với rubric, chưa khớp với problem đã thu hẹp sau kiểm chứng | Chuyển bottleneck sang bước tự rút quy định nộp bài, nơi sinh ra lỗi bỏ sót |
+| CP5–6 Problem Statement | Nhờ AI soạn nháp quy trình tương lai, Problem Statement v0, v1 và phản biện v0 | Gom được bằng chứng từ mục 3.2 thành baseline đếm được (3 lỗi định dạng/repo) | Baseline chỉ dựa trên 1 repo của 1 lab; AI viết thay phần nhóm phải tự chốt | Ghi rõ mẫu nhỏ ở mục 9; mang bản nháp ra nhóm để thảo luận và chốt lại |
+| CP6 Mức can thiệp / quyết định | Nhờ AI so sánh 4 mức, chấm 4 rủi ro và đề xuất quyết định | Chỉ ra bằng chứng vì sao checklist (No AI) không đủ: template đã ghi rõ yêu cầu tiêu đề mà 2/4 file vẫn sai | Thời gian viết script chỉ là ước tính, chưa làm thử; Value chấm TB khi chưa có phỏng vấn | Giới hạn pilot trong repo nhóm; đặt ngưỡng dừng theo số lỗi lọt và số lần báo nhầm |
 
 ---
 
@@ -201,4 +201,8 @@ Trả lời bằng trải nghiệm thật của bạn, tối thiểu 200 từ ch
 
 ## 7. Tài liệu tham khảo
 
--
+- Đề bài Day 02: README, RULES, CHECKPOINTS, RUBRIC, SUBMISSION, [docs/01-worksheet.md](../../docs/01-worksheet.md)
+- [GitHub Docs — Use autograding (GitHub Classroom)](https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/use-autograding)
+- [Gradescope Autograder Specifications](https://gradescope-autograders.readthedocs.io/en/latest/specs/)
+- [GitHub Docs — Creating a pull request template](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository)
+- Báo cáo nhóm [group_report.md](../team/group_report.md) mục 2–4

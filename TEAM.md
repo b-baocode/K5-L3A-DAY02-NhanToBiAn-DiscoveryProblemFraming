@@ -6,7 +6,7 @@
 
 - Tên nhóm: NhanToBiAn
 - Candidate problem nhóm chọn (1 câu): Học viên bỏ sót quy định nộp bài (tên repo, tên file, tiêu đề, mục bắt buộc) nằm rải rác ở nhiều file và chỉ phát hiện khi đã sát deadline
-- Quyết định cuối (Go / Not Yet / No-Go):
+- Quyết định cuối (Go / Not Yet / No-Go): Go, phạm vi nhỏ — Rule (bộ kiểm tự động + checklist), không dùng AI
 
 ## Thành viên
 

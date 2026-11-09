@@ -8,7 +8,7 @@
 - Tên nhóm: NhanToBiAn
 - Thành viên: xem `TEAM.md`
 - Candidate problem được chọn (1 câu): Học viên bỏ sót quy định nộp bài (tên repo, tên file, tiêu đề, mục bắt buộc) nằm rải rác ở nhiều file và chỉ phát hiện khi đã sát deadline
-- Quyết định cuối: Go / Not Yet / No-Go
+- Quyết định cuối: Go, phạm vi nhỏ — Rule (bộ kiểm tự động + checklist), không dùng AI
 
 ---
 
@@ -221,18 +221,32 @@ HIỆN TẠI — mỗi lab, ghép từ card #1, #3 (Bảo) và #4 (Ba)
 Ghi rõ bước nào **Rule**, bước nào **AI**, bước nào **con người**, **boundary** ở đâu, **phương án quay về** khi AI sai.
 
 ```text
+TƯƠNG LAI — mỗi lab, không có bước AI
 
+[1 Đọc checklist "Phải nộp gì" ở đầu README: 2–5']      ← NO AI (checklist viết 1 lần/lab, trích dẫn file gốc)
+→ [2 Đọc file chi tiết khi cần: 10–15']                  ← CON NGƯỜI
+→ [3 Làm bài, commit + push như bình thường]             ← CON NGƯỜI
+→ [4 Bộ kiểm tự chạy mỗi lần push: < 2']                 ← RULE (GitHub Actions + ls-lint)
+      kiểm: tên repo đúng mẫu DAY02 · tên file MSSV_HoTen.md · tiêu đề khớp tên file · đủ các mục bắt buộc, mục không trống
+→ [5 Đọc báo lỗi, tự sửa, push lại: 2–5']                ← CON NGƯỜI (boundary: bộ kiểm chỉ báo lỗi, không tự sửa, không tự commit)
+→ [6 Tự đối chiếu nội dung với rubric: ~60']            ← CON NGƯỜI (ngoài phạm vi bộ kiểm)
+→ [7 Nộp link LMS: 2']                                   ← CON NGƯỜI
+
+Boundary: bộ kiểm không đổi tên, không sửa file, không commit, không chấm nội dung;
+khi kết quả bộ kiểm khác với file đề, file đề là quy định chính thức.
+Phương án quay về: Actions không chạy hoặc báo nhầm → tick tay checklist ở bước 1,
+1 thành viên soát chéo tên repo/file/tiêu đề trước deadline 1 giờ; người viết bộ kiểm sửa rule.
 ```
 
 ### 4.3. Before / after
 
 | Chỉ số | Trước | Sau (kỳ vọng) | Ghi chú |
 |---|---:|---:|---|
-| Số bước | | | |
-| Tổng thời gian | | | |
-| Số bước thủ công | | | |
-| Bottleneck chính | | | |
-| Rủi ro mới phát sinh | | | |
+| Số bước | 6 | 7 | Thêm bước kiểm tự động (bước 4) và bước sửa theo báo lỗi (bước 5) |
+| Tổng thời gian | ~80–100' ngoài thời gian làm bài | ~75–95' | Thời gian gần như không đổi; cái đổi là **thời điểm phát hiện lỗi**: từ sát deadline sang ngay lần push đầu tiên |
+| Số bước thủ công | 6 | 6 | Bước tự rút quy định (bước 3 cũ) được thay bằng checklist có sẵn + kiểm tự động |
+| Bottleneck chính | Bước 3: tự rút quy định từ 11 file, dễ bỏ sót | Bước 6: đối chiếu nội dung với rubric | Phần định dạng được Rule xử lý; phần nội dung chưa giải, ghi vào hướng tiếp theo |
+| Rủi ro mới phát sinh | — | Bộ kiểm báo nhầm hoặc lỗi thời khi đề sửa sát giờ (đề Day 02 có 12 commit sửa trong ~14 giờ trước lab); học viên coi "xanh" là đủ và bỏ qua kiểm nội dung; repo fork phải bật Actions thủ công | Xử lý ở tiêu chí đánh giá (mục 7) và ngưỡng dừng (mục 8) |
 
 ---
 
@@ -240,16 +254,18 @@ Ghi rõ bước nào **Rule**, bước nào **AI**, bước nào **con người*
 
 | Trường | Nội dung |
 |---|---|
-| **Actor** | |
-| **Quy trình** | |
-| **Bottleneck** | |
-| **Impact** | |
-| **Success Metric** (baseline → target, cách đo) | |
-| **Boundary** (AI không được làm gì; khi nào cần con người kiểm tra — HITL) | |
+| **Actor** | Học viên AI20K làm lab cá nhân và nhóm trên repo GitHub, nộp link repo qua LMS |
+| **Quy trình** | Mở README → đọc RULES, CHECKPOINTS, RUBRIC, SUBMISSION, worksheet → tự rút quy định nộp bài → làm bài → tự đối chiếu bài với rubric → kiểm tên file, commit, nộp (mục 4.1) |
+| **Bottleneck** | Bước tự rút quy định nộp bài từ 11 file/1.325 dòng: quy định bị bỏ sót ở đây không có bước nào kiểm lại có hệ thống, chỉ lộ ra khi tự soát bằng mắt sát deadline |
+| **Impact** | Mỗi lỗi tên repo/file có nguy cơ bị trừ 5 điểm. Day 02: 3 lỗi định dạng trong 1 repo nhóm 4 người (tên repo `Day02`, 2 file báo cáo có tiêu đề chưa khớp tên file). Lỗi phát hiện muộn kéo theo sửa gấp sát giờ (Day 01: commit nộp lúc 00:19, sau 23h59) |
+| **Success Metric** (baseline → target, cách đo) | (1) Số lỗi định dạng còn trong repo tại commit cuối trước deadline: 3/repo (Day 02, đếm tay ngày 09/11) → 0. (2) Thời điểm phát hiện lỗi: khi có người tình cờ thấy, có khi sát deadline → trong buổi lab, ngay lần push đầu tiên sau khi lỗi phát sinh. Cách đo: đếm lỗi theo danh sách quy định tại commit cuối của 3 lab tiếp theo, đối chiếu git log |
+| **Boundary** (AI không được làm gì; khi nào cần con người kiểm tra — HITL) | Không công cụ nào được tự đổi tên repo/file, tự sửa nội dung, tự commit hay tự nộp bài; không chấm nội dung thay người chấm. File đề là quy định chính thức. HITL: học viên tự đọc kết quả kiểm và quyết định sửa; mỗi khi đề sửa quy định nộp bài, người phụ trách cập nhật lại danh sách quy định trước khi dùng |
 
 Phản biện nhận được (từ AI hoặc nhóm khác) và nhóm có đồng ý không:
 
--
+- **AI (vai PM hoài nghi): baseline 3 lỗi chỉ đếm trên 1 repo nhóm, mẫu quá nhỏ.** Đồng ý một phần: đây là lỗi thật, đếm được, nhưng chưa đại diện cho cả lớp. Giữ làm baseline, ghi rõ cần phỏng vấn nhóm khác (mục 3.2) để mở rộng.
+- **AI: metric chỉ đếm lỗi định dạng, bỏ qua lỗi thiếu nội dung.** Đồng ý: thu hẹp phạm vi có chủ đích vì lỗi định dạng có đúng/sai rõ và đã có bằng chứng; lỗi nội dung ghi vào hạn chế (mục 9).
+- **AI: Boundary nói "không công cụ nào được…" có phải đang ngầm chứa giải pháp không?** Không đồng ý: boundary chỉ giới hạn phạm vi can thiệp, chưa chọn công cụ cụ thể; giải pháp chỉ chốt ở mục 6.
 
 ---
 
@@ -257,38 +273,38 @@ Phản biện nhận được (từ AI hoặc nhóm khác) và nhóm có đồng
 
 ### 6.1. Ma trận độ mơ hồ × độ phức tạp
 
-Bài của nhóm nằm ở ô:
+Bài của nhóm nằm ở ô: **Độ mơ hồ thấp × Độ phức tạp thấp** → Rule hoặc Workflow đơn giản thường đủ.
 
 Vì sao:
+
+- **Mơ hồ thấp:** mỗi quy định có đúng/sai rõ ràng: repo có tên `DAY02` hay không, file có đúng mẫu `MSSV_HoTen.md` hay không, tiêu đề có khớp tên file hay không, mục bắt buộc có hay không.
+- **Phức tạp thấp:** 1 nguồn dữ liệu (chính repo của học viên), các phép kiểm độc lập nhau, bước sau không phụ thuộc kết quả bước trước.
 
 ### 6.2. So sánh 4 mức
 
 | Mức | Phương án cho bài của nhóm | Đủ khi nào | Rủi ro | Chọn? |
 |---|---|---|---|---|
-| **No AI** (sửa quy trình) | | | | |
-| **Rule** | | | | |
-| **Workflow** | | | | |
-| **Agent** | | | | |
+| **No AI** (sửa quy trình) | Checklist "Phải nộp gì" ở đầu README, mỗi dòng trích dẫn file gốc; 1 thành viên soát chéo trước deadline 1 giờ | Học viên đọc và tick đủ checklist | Chỉ nhắc, không kiểm: template Day 02 đã ghi rõ "Sửa cả dòng tiêu đề phía trên cho khớp" mà 2/4 file vẫn sai | Có, làm nền |
+| **Rule** | GitHub Actions chạy khi push + ls-lint kiểm tên file; script kiểm tên repo, tiêu đề, mục bắt buộc | Quy định có đúng/sai rõ: đủ cho cả 3 lỗi đã xảy ra ở Day 02 | Báo nhầm khi rule viết sai; lỗi thời khi đề sửa sát giờ; repo fork phải bật Actions | **Có** |
+| **Workflow** | Script lấy bài + rubric, AI đánh giá mục nào còn thiếu ý | Khi cần kiểm **nội dung** (đủ ý, có số liệu) | Mơ hồ cao, chưa có tiêu chí "đủ ý" rõ; AI báo "đủ" khi chưa đủ làm học viên chủ quan | Không, để sau |
+| **Agent** | AI tự đọc đề, tự sửa tên, tự sửa bài, tự commit | Không có trường hợp nào trong bài này cần AI tự quyết bước tiếp theo | Tự sửa bài và tự commit vi phạm quy định "không viết hộ"; sai thì mất điểm thật | Không |
 
-**Mức chọn:**
+**Mức chọn:** Rule, kèm checklist (No AI) làm nền.
 
-**Vì sao không chọn mức đơn giản hơn:**
+**Vì sao không chọn mức đơn giản hơn:** No AI (checklist) đã có sẵn dạng ghi chú trong template nhưng vẫn bị bỏ sót: 2/4 file báo cáo cá nhân Day 02 có tiêu đề chưa khớp tên file dù template ghi rõ yêu cầu. Checklist chỉ nhắc, còn lỗi chỉ hết khi có bước **kiểm** tự động chạy mỗi lần push.
+
+**Vì sao không lên Workflow:** sau kiểm chứng, problem đã thu hẹp về lỗi định dạng, vốn có đúng/sai rõ. Phần kiểm nội dung theo rubric chưa có tiêu chí đạt/không đạt đủ rõ để đánh giá AI (dấu hiệu nên chọn Not Yet cho phần đó).
 
 ### 6.3. AI Canvas rút gọn
 
-| Thành phần | Nội dung |
-|---|---|
-| **Prediction** — AI dự đoán / tạo ra gì? | |
-| **Judgment** — con người cân nhắc, quyết định gì? | |
-| **Action** — hành động cuối cùng là gì, ai làm? | |
-| **Outcome** — đo kết quả bằng gì? | |
-| **Input** — AI cần dữ liệu đầu vào gì mỗi lần chạy? Có sẵn không? | |
-| **Feedback** — lấy phản hồi ở đâu để cải thiện? | |
+Không điền vì nhóm chọn Rule. Bài toán không cần AI dự đoán hay tạo nội dung: mọi quy định cần kiểm đều có đúng/sai rõ, Rule xử lý được cả 3 lỗi đã ghi nhận ở Day 02, và đầu ra mong muốn là một danh sách lỗi cố định chứ không phải nội dung mới. Thêm AI chỉ thêm chi phí và kiểu sai mới (báo "đúng" khi sai).
 
 ### 6.4. Hai câu hỏi của Google PAIR
 
-- Người dùng muốn **được hỗ trợ (augment)** hay **giao hẳn việc (automate)**? Bằng chứng:
-- AI sai kiểu nào tệ hơn, **báo nhầm** hay **bỏ sót**? Vì sao, và thiết kế đã xử lý thế nào:
+Không áp dụng vì không có bước AI. Với giải pháp Rule, nhóm vẫn xét kiểu sai:
+
+- **Augment hay automate:** học viên vẫn tự sửa và tự nộp; bộ kiểm chỉ báo lỗi (augment). Lý do: quy định "không viết hộ" và mỗi người phải commit bằng tài khoản của mình.
+- **Báo nhầm hay bỏ sót tệ hơn:** **bỏ sót** tệ hơn, vì lỗi lọt qua là bị trừ điểm thật, còn báo nhầm chỉ tốn vài phút kiểm lại. Thiết kế: rule viết theo hướng chặt, mỗi lỗi báo kèm trích dẫn file đề gốc để học viên tự đối chiếu khi nghi báo nhầm.
 
 ---
 
@@ -296,29 +312,33 @@ Vì sao:
 
 | Trường | Nội dung |
 |---|---|
-| **Actor** | |
-| **Quy trình** | |
-| **Bottleneck** | |
-| **Impact** | |
-| **Success Metric** (baseline → target, cách đo) | |
-| **Boundary** | |
-| **AI intervention point** | |
-| **Mức chọn** | No AI / Rule / Workflow / Agent |
-| **Rủi ro & người kiểm tra** | |
+| **Actor** | Học viên AI20K làm lab cá nhân và nhóm trên repo GitHub, nộp link repo qua LMS |
+| **Quy trình** | Đọc checklist "Phải nộp gì" → đọc file chi tiết khi cần → làm bài, push → bộ kiểm tự chạy → tự sửa theo báo lỗi → tự đối chiếu nội dung với rubric → nộp (mục 4.2) |
+| **Bottleneck** | Bước tự rút quy định nộp bài từ 11 file/1.325 dòng (không đổi so với v0) |
+| **Impact** | Mỗi lỗi tên repo/file có nguy cơ bị trừ 5 điểm; Day 02: 3 lỗi định dạng trong 1 repo nhóm 4 người; lỗi phát hiện muộn kéo theo sửa gấp sát giờ |
+| **Success Metric** (baseline → target, cách đo) | (1) Số lỗi định dạng còn trong repo tại commit cuối trước deadline: 3/repo → 0. (2) Thời điểm phát hiện lỗi: sát deadline → ngay lần push đầu sau khi lỗi phát sinh. (3) Số lần bộ kiểm báo nhầm: chưa có → tối đa 1 lần/lab. Cách đo: log GitHub Actions + đếm tay theo checklist tại commit cuối, 3 lab tiếp theo |
+| **Boundary** | Bộ kiểm chỉ báo lỗi: không đổi tên, không sửa file, không commit, không chấm nội dung. File đề là quy định chính thức khi có khác biệt. Học viên tự quyết định sửa gì |
+| **AI intervention point** | Không có. Lý do: mọi quy định cần kiểm có đúng/sai rõ, Rule xử lý được cả 3 lỗi đã ghi nhận |
+| **Mức chọn** | Rule (kèm checklist No AI làm nền) |
+| **Rủi ro & người kiểm tra** | Báo nhầm hoặc rule lỗi thời khi đề sửa sát giờ → người phụ trách bộ kiểm (nhóm trưởng) đối chiếu lại rule với file đề mỗi khi đề có commit mới; học viên coi "xanh" là đủ → checklist ghi rõ bộ kiểm không kiểm nội dung, bước 6 vẫn do học viên làm |
 
 **Thay đổi so với v0 và lý do:**
 
 | Trường | v0 | v1 | Vì sao đổi |
 |---|---|---|---|
-| | | | |
+| Success Metric | 2 chỉ số, đếm tay tại commit cuối | Thêm chỉ số (3) số lần báo nhầm; cách đo thêm log GitHub Actions | Khi đã chọn Rule thì phải đo cả kiểu sai mới của giải pháp, không chỉ đo lỗi của học viên |
+| Boundary | Giới hạn chung cho mọi công cụ | Cụ thể cho bộ kiểm: chỉ báo lỗi, file đề là quy định chính thức | Đã chọn giải pháp nên boundary phải gắn với đúng công cụ |
+| Quy trình | 6 bước hiện tại | 7 bước tương lai, có bước kiểm tự động | Thêm bước kiểm để thay cho việc tự rút quy định bằng trí nhớ |
 
-**Tiêu chí đánh giá đầu ra của AI (3–5 tiêu chí):**
+**Tiêu chí đánh giá đầu ra của giải pháp Rule (3–5 tiêu chí):**
 
 | # | Tiêu chí | Đạt khi | Không đạt khi |
 |---:|---|---|---|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
+| 1 | Không bỏ sót | Bắt được 100% lỗi trong bộ test dựng từ lỗi thật: repo tên `Day02`, tiêu đề còn `MSSV_HoTen`, MSSV thiếu tiền tố `2A`, file báo cáo thiếu mục bắt buộc | Lọt bất kỳ lỗi nào trong bộ test |
+| 2 | Không báo nhầm | Repo và file đúng chuẩn thì không báo lỗi nào; tối đa 1 lần báo nhầm/lab trong pilot | Báo lỗi trên file đúng chuẩn từ 2 lần/lab trở lên |
+| 3 | Báo lỗi dễ hiểu | Mỗi lỗi ghi rõ file nào, vi phạm quy định nào, trích dẫn dòng trong file đề gốc | Chỉ báo "failed" mà không nói sai ở đâu |
+| 4 | Kịp thời | Kết quả có trong vòng 2 phút sau mỗi lần push | Không chạy, hoặc chỉ chạy khi có người bấm tay |
+| 5 | Theo kịp đề | Khi đề có commit sửa quy định nộp bài, rule được cập nhật trước khi lab bắt đầu | Rule kiểm theo quy định cũ đã bị sửa |
 
 ---
 
@@ -328,31 +348,40 @@ Vì sao:
 
 | Rủi ro | Câu hỏi | Mức độ rủi ro (Thấp = an toàn / TB / Cao = nguy hiểm) | Lý do / bằng chứng |
 |---|---|---|---|
-| **Value** | Người dùng có thật sự cần và sẽ dùng không? | | |
-| **Usability** | Người dùng có dùng được, có hiểu và sửa được đầu ra của AI không? | | |
-| **Feasibility** | Có đủ dữ liệu, công cụ, kỹ năng để làm không? | | |
-| **Viability** | Có hợp chi phí, pháp lý, quy định tổ chức không? Ai vận hành? | | |
+| **Value** | Người dùng có thật sự cần và sẽ dùng không? | TB | Lỗi định dạng xảy ra thật ngay trong nhóm (3 lỗi ở Day 02, 2 lỗi xảy ra dù template đã ghi rõ yêu cầu). Chưa có phỏng vấn nhóm khác nên chưa biết pain có phổ biến cả lớp không |
+| **Usability** | Người dùng có dùng được, có hiểu và sửa được đầu ra của AI không? | Thấp | Học viên đã quen push lên GitHub; kết quả hiện ngay trên repo dạng đạt/không đạt, mỗi lỗi chỉ rõ file và quy định nên tự sửa được |
+| **Feasibility** | Có đủ dữ liệu, công cụ, kỹ năng để làm không? | Thấp | Công cụ có sẵn (GitHub Actions, ls-lint có Action chính thức, mục 3.3); runner chuẩn miễn phí cho repo public; quy định cần kiểm đều có trong file đề. Cần thêm thời gian viết script, ước tính vài giờ, chưa làm thử |
+| **Viability** | Có hợp chi phí, pháp lý, quy định tổ chức không? Ai vận hành? | TB | Trong repo nhóm: nhóm trưởng vận hành, không tốn phí. Muốn đưa vào repo đề cho cả lớp thì cần ban tổ chức đồng ý (giả định #5, chưa hỏi); đề sửa sát giờ nên phải có người cập nhật rule mỗi lab |
 
 ### 8.2. Kết luận
 
-**Quyết định:** Go / Not Yet / No-Go
+**Quyết định:** **Go, phạm vi nhỏ** — dùng Rule (bộ kiểm tự động + checklist), **không dùng AI**.
 
-**Lý do:**
+**Lý do:** không rủi ro nào ở mức Cao; problem đã thu hẹp về lỗi định dạng có đúng/sai rõ; công cụ Rule có sẵn và miễn phí; bằng chứng cho thấy checklist đơn thuần (No AI) đã không đủ. Value còn ở mức TB vì chưa phỏng vấn nhóm khác, nên pilot giới hạn trong repo nhóm trước khi đề xuất cho cả lớp.
 
-**Nếu Go — pilot nhỏ nhất:**
+**Nếu Go — pilot nhỏ nhất:** trong repo nhóm NhanToBiAn, 3 lab tiếp theo: (1) checklist "Phải nộp gì" ở đầu README nhóm, mỗi dòng trích dẫn file đề; (2) 1 workflow GitHub Actions chạy khi push, kiểm 4 quy định: tên repo, tên file `MSSV_HoTen.md`, tiêu đề khớp tên file, đủ các mục bắt buộc và không trống. Nhóm trưởng phụ trách cập nhật rule khi đề sửa.
 
-**Nếu Not Yet — cần kiểm chứng gì trước:**
+**Nếu Not Yet — cần kiểm chứng gì trước:** áp dụng cho phần **kiểm nội dung theo rubric** (Workflow có AI): cần phỏng vấn 2–3 học viên nhóm khác (mục 3.2) và viết được tiêu chí "mục đủ ý" trước khi cân nhắc.
 
-**Nếu No-Go — nên làm gì thay AI:**
+**Nếu No-Go — nên làm gì thay AI:** áp dụng cho việc dùng AI ở phần định dạng: không cần, Rule đã đủ.
 
-**Ngưỡng dừng** (nếu sau … mà … thì quay về …):
+**Ngưỡng dừng:** nếu sau 3 lab mà vẫn còn lỗi định dạng lọt tới commit cuối, hoặc bộ kiểm báo nhầm từ 2 lần/lab trở lên, thì quay về checklist tick tay + 1 thành viên soát chéo trước deadline 1 giờ. Nếu phỏng vấn cho thấy nhóm khác không gặp lỗi định dạng, giữ pilot trong nhóm, không đề xuất cho cả lớp.
 
 ---
 
 ## 9. Hạn chế và hướng tiếp theo
 
--
+- Chưa phỏng vấn học viên nhóm khác; Value đang dựa trên bằng chứng trong nhóm (1 repo, 4 file báo cáo, git log của thành viên).
+- Baseline 3 lỗi/repo đếm trên 1 repo của 1 lab, mẫu nhỏ.
+- Thời gian đọc đề chưa bấm giờ thật; ước tính lệch nhau giữa 2 thành viên (15 và 35 phút/lab).
+- Phần đối chiếu nội dung bài với rubric chưa giải, vẫn là bottleneck sau khi có bộ kiểm; hướng tiếp theo là viết tiêu chí "mục đủ ý" rồi cân nhắc Workflow có AI.
+- Hướng khác đáng làm tiếp: #7 Thủ tục hành chính lần đầu (Duy), sau khi có số liệu thật.
 
 ## 10. Tài liệu tham khảo
 
--
+- [GitHub Docs — Use autograding (GitHub Classroom)](https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/use-autograding)
+- [GitHub Docs — Actions quickstart](https://docs.github.com/en/actions/writing-workflows/quickstart)
+- [GitHub Docs — About billing for GitHub Actions](https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-actions/about-billing-for-github-actions)
+- [ls-lint](https://ls-lint.org/) · [ls-lint GitHub Action](https://github.com/ls-lint/action)
+- Rob Fitzpatrick — *The Mom Test*; David Bland — *Testing Business Ideas* (Assumption Map); Teresa Torres — Opportunity Solution Tree; Jeff Gothelf — *Lean UX*; Google PAIR Guidebook; Anthropic — *Building Effective Agents*; Marty Cagan (SVPG) — 4 rủi ro (theo [docs/01-worksheet.md](../../docs/01-worksheet.md))
+- Git log các repo lab Day 01, Day 02 của thành viên nhóm; lịch sử commit repo đề Day 02
