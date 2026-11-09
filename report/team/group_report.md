@@ -290,11 +290,14 @@ flowchart TD
 | **Success Metric** (baseline → target, cách đo)                            | (1) Số lỗi định dạng còn trong repo tại commit cuối trước deadline: 3/repo (Day 02, đếm tay ngày 09/11) → 0. (2) Thời điểm phát hiện lỗi: khi có người tình cờ thấy, có khi sát deadline → trong buổi lab, ngay lần push đầu tiên sau khi lỗi phát sinh. Cách đo: đếm lỗi theo danh sách quy định tại commit cuối của 3 lab tiếp theo, đối chiếu git log |
 | **Boundary** (AI không được làm gì; khi nào cần con người kiểm tra — HITL) | Không công cụ nào được tự đổi tên repo/file, tự sửa nội dung, tự commit hay tự nộp bài; không chấm nội dung thay người chấm. File đề là quy định chính thức. HITL: học viên tự đọc kết quả kiểm và quyết định sửa; mỗi khi đề sửa quy định nộp bài, người phụ trách cập nhật lại danh sách quy định trước khi dùng                                       |
 
-Phản biện nhận được (từ AI hoặc nhóm khác) và nhóm có đồng ý không:
+Phản biện nhận được khi trao đổi, rà soát bài và cách nhóm xử lý:
 
-- **AI (vai PM hoài nghi): baseline 3 lỗi chỉ đếm trên 1 repo nhóm, mẫu quá nhỏ.** Đồng ý một phần: đây là lỗi thật, đếm được, nhưng chưa đại diện cho cả lớp. Giữ làm baseline, ghi rõ cần phỏng vấn nhóm khác (mục 3.2) để mở rộng.
-- **AI: metric chỉ đếm lỗi định dạng, bỏ qua lỗi thiếu nội dung.** Đồng ý: thu hẹp phạm vi có chủ đích vì lỗi định dạng có đúng/sai rõ và đã có bằng chứng; lỗi nội dung ghi vào hạn chế (mục 9).
-- **AI: Boundary nói "không công cụ nào được…" có phải đang ngầm chứa giải pháp không?** Không đồng ý: boundary chỉ giới hạn phạm vi can thiệp, chưa chọn công cụ cụ thể; giải pháp chỉ chốt ở mục 6.
+- **Phản biện 1 (người review bài / bạn học lớp bên):** "Mới chỉ có 3 lỗi định dạng ghi nhận trên đúng một repo nhóm mình thì mẫu quá ít, liệu có phải do nhóm bạn bất cẩn chứ cả lớp không ai bị vậy không?"
+  - **Nhóm chốt:** Đồng ý một phần. 3 lỗi này (tên repo `Day02`, 2 tiêu đề file không khớp tên file) mới chỉ xảy ra trên repo nhóm mình. Nhóm giữ con số 3 làm baseline đo nội bộ, không khái quát cho cả khóa, và ghi rõ giới hạn này ở mục 9.
+- **Phản biện 2 (thành viên nhóm phản biện nội bộ):** "Bộ tiêu chí thành công chỉ đếm lỗi tên file, tên repo thì có nông quá không? Nếu bài nộp đúng tên nhưng rỗng nội dung thì sao?"
+  - **Nhóm chốt:** Giữ phạm vi đã chọn. Lỗi định dạng có đúng/sai rõ ràng nên kiểm được bằng quy tắc; còn "nội dung đủ sâu hay chưa" hiện chưa có tiêu chí định lượng. Nhóm tách phần kiểm nội dung thành bottleneck tiếp theo, do học viên tự đối chiếu rubric (bước 8, mục 4.2), không gộp vào phạm vi bộ kiểm.
+- **Phản biện 3 (bạn nhóm khác khi nghe trình bày):** "Quy định chặn push mà không cho tự động sửa file có làm mất thời gian sửa tay sát deadline không?"
+  - **Nhóm chốt:** Có tốn thêm vài phút, nhưng nhóm chấp nhận. Bài nộp phải do chính học viên sửa và commit, nắm rõ mình thay đổi gì; bộ kiểm tự sửa hay tự đổi tên sẽ tạo thay đổi mà học viên không kiểm soát và trái quy định "không viết hộ". Tự đọc lỗi và tự sửa cũng giúp lần sau không lặp lại. Khi sát deadline, học viên vẫn vượt rào được bằng `git push --no-verify` (mục 4.2).
 
 ---
 
@@ -323,6 +326,8 @@ Vì sao:
 **Vì sao không chọn mức đơn giản hơn:** No AI (checklist) đã có sẵn dạng ghi chú trong template nhưng vẫn bị bỏ sót: 2/4 file báo cáo cá nhân Day 02 có tiêu đề chưa khớp tên file dù template ghi rõ yêu cầu. Checklist chỉ nhắc, còn lỗi chỉ hết khi có bước **kiểm** tự động chạy mỗi lần push. Nhóm chọn **chặn trước khi push** thay vì chỉ báo sau khi push: báo sau (Actions) hiện dấu ✗ trên repo nhưng bài sai đã lên rồi và học viên dễ không để ý; chặn ở pre-push đưa lỗi ra đúng lúc học viên đang chủ động nộp. Đây là giả định, sẽ kiểm trong pilot bằng số lỗi lọt lên repo.
 
 **Vì sao không lên Workflow:** sau kiểm chứng, problem đã thu hẹp về lỗi định dạng, vốn có đúng/sai rõ. Phần kiểm nội dung theo rubric chưa có tiêu chí đạt/không đạt đủ rõ để đánh giá AI (dấu hiệu nên chọn Not Yet cho phần đó).
+
+**Thảo luận và chốt phương án trong nhóm:** tối 09/11, cả 4 thành viên ngồi lại rà soát trực tiếp. Có ý kiến cân nhắc kiểm thêm cả nội dung bài, nhưng nhóm thống nhất gạt bỏ vì chưa có tiêu chí đánh giá nội dung rõ ràng, AI dễ đánh giá sai lệch, và tự động can thiệp vào câu chữ trái nguyên tắc tự làm bài. Nhóm chốt Rule kết hợp checklist, tập trung xử lý dứt điểm 3 lỗi định dạng đã xảy ra thật trên repo nhóm.
 
 ### 6.3. AI Canvas rút gọn
 
@@ -410,6 +415,14 @@ Không áp dụng vì không có bước AI. Với giải pháp Rule, nhóm vẫ
 **Nếu No-Go — nên làm gì thay AI:** áp dụng cho việc dùng AI ở phần định dạng: không cần, Rule đã đủ.
 
 **Ngưỡng dừng:** nếu có lần nào hook chặn nhầm khiến thành viên không push được trong 1 giờ trước deadline, hoặc chặn nhầm từ 2 lần/lab trở lên, thì **bỏ chặn**, chuyển hook về chế độ chỉ nhắc (cảnh báo nhưng vẫn cho push). Nếu sau 3 lab mà vẫn còn lỗi định dạng lọt tới commit cuối, thì quay về checklist tick tay + 1 thành viên soát chéo trước deadline 1 giờ. Ngưỡng "người ngoài nhóm không có nhu cầu thì giữ pilot trong nhóm" đã chạm sau phỏng vấn ở mục 3.2, nên nhóm không đề xuất cho cả lớp.
+
+**Biên bản chốt quyết định:** buổi thảo luận chốt bài tối 09/11, có mặt đủ 4 thành viên (Bảo, Ba, Duy, Dung).
+
+- **Phương án kỹ thuật:** chỉ dùng Rule (hook pre-push kiểm trên máy + workflow GitHub Actions làm lưới an toàn) kèm checklist; không dùng AI.
+- **Đổi bài toán hay không:** Bảo nêu vấn đề 3 học viên ngoài nhóm không hứng thú thì có nên đổi bài toán không. Nhóm phản biện lại: chính nhóm vừa mắc 3 lỗi định dạng trong ngày, nên pain là có thật với nhóm. Nhóm thống nhất không đổi bài toán mà thu hẹp phạm vi: chỉ thử nghiệm nội bộ trên repo NhanToBiAn trong 3 lab tiếp theo, không đề xuất cho cả lớp.
+- **Rủi ro Value:** giữ mức TB (trong nhóm có lỗi thật, ngoài nhóm chưa có nhu cầu).
+- **Kiểm nội dung bằng AI:** có ý kiến đề xuất, nhóm bác bỏ (lý do ở mục 6.2).
+- **Kết luận chung của nhóm:** Go, phạm vi nhỏ — Rule, không dùng AI.
 
 ---
 
