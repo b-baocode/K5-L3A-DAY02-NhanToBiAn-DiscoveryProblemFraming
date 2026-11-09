@@ -99,22 +99,57 @@ Lý do chấm:
 
 | # | Giả định | Loại (Value / Usability / Feasibility / Viability) | Quan trọng (1–5) | Đã có bằng chứng (1–5) | Kiểm chứng trước? |
 |---:|---|---|---:|---:|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
-| 6 | | | | | |
+| 1 | Học viên khác cũng nộp sát deadline vì phát hiện thiếu sót muộn, không chỉ riêng một người | Value | 5 | 2 | ✅ |
+| 2 | Lỗi bị trừ điểm chủ yếu là lỗi định dạng (tên file, tên repo, tiêu đề) do bỏ sót quy định, không phải do thiếu nội dung | Value | 5 | 2 | ✅ |
+| 3 | Nộp muộn là do không biết bài còn thiếu gì, không phải do bắt đầu làm muộn | Value | 4 | 1 | ✅ |
+| 4 | Quy định nộp bài giữa các lab đủ giống nhau để dùng chung một checklist hoặc một bộ kiểm tra | Feasibility | 4 | 3 | — |
+| 5 | Ban tổ chức sẵn sàng thêm checklist hoặc bước kiểm tra tự động vào repo đề | Viability | 3 | 1 | Hỏi coach sau lab |
 
-*Điền 4–6 giả định; xóa dòng thừa.*
-
-Giả định nhóm kiểm chứng trong buổi này:
+Giả định nhóm kiểm chứng trong buổi này: #1, #2, #3 (quan trọng cao, bằng chứng thấp).
 
 ### 3.2. Kiểm chứng
 
-Cách đã dùng: Phỏng vấn / Survey / Log, ticket, review
+Cách đã dùng:
 
-Interview snapshot (mỗi buổi phỏng vấn một bảng, hoặc đặt file trong `report/assets/cp4-interview-snapshot-N.md`):
+1. **Log** (git log của các repo lab và artefact trong repo nhóm): hành vi đã xảy ra, ghi theo vai trò, không ghi tên.
+2. **Phỏng vấn nhanh 2–3 học viên nhóm khác** theo The Mom Test, mỗi buổi ~5'. Không phỏng vấn thành viên nhóm mình.
+
+**Bộ câu hỏi phỏng vấn** (chỉ hỏi về hành vi đã xảy ra, không có câu "Bạn có muốn…" / "Bạn có dùng… không nếu…"):
+
+| # | Câu hỏi | Kiểm giả định |
+|---:|---|---|
+| 1 | Lab gần nhất bạn nộp là lab nào? Bạn commit bản cuối lúc mấy giờ? (mở git log cùng xem nếu được) | #1 |
+| 2 | Kể lại từ lúc mở đề tới lúc nộp: bạn làm những bước nào? | #3 |
+| 3 | Lần gần nhất bạn phát hiện bài còn thiếu hoặc sai một quy định nộp bài là khi nào? Thiếu cái gì? Phát hiện lúc mấy giờ, bằng cách nào? | #1, #2 |
+| 4 | Bạn đã từng bị trừ điểm hoặc phải sửa gấp vì tên repo, tên file, tiêu đề hay thiếu mục chưa? Chuyện gì đã xảy ra? | #2 |
+| 5 | Trước khi nộp, bạn tự kiểm tra bài bằng cách nào? Mất khoảng bao lâu? | Workaround hiện tại |
+| 6 | Lần đó bạn bắt đầu làm lúc mấy giờ? | #3 (phân biệt "bắt đầu muộn" với "phát hiện thiếu muộn") |
+
+**Interview snapshot:** *Chờ nhóm điền sau khi phỏng vấn thật. Mỗi buổi ghi một bảng ngay sau khi xong; nếu chưa phỏng vấn kịp, để trống và ghi rõ là chưa thực hiện, không được điền số liệu giả định.*
+
+**Snapshot 1**
+
+| Trường | Nội dung |
+|---|---|
+| Người được hỏi (vai trò, không ghi tên thật) | |
+| Câu nói đáng nhớ nhất (nguyên văn) | |
+| Lần gần nhất gặp vấn đề này: chuyện gì đã xảy ra? | |
+| Hiện đang xử lý bằng cách nào (workaround)? | |
+| Mất bao lâu, bao lần? | |
+| Insight / opportunity rút ra | |
+
+**Snapshot 2**
+
+| Trường | Nội dung |
+|---|---|
+| Người được hỏi (vai trò, không ghi tên thật) | |
+| Câu nói đáng nhớ nhất (nguyên văn) | |
+| Lần gần nhất gặp vấn đề này: chuyện gì đã xảy ra? | |
+| Hiện đang xử lý bằng cách nào (workaround)? | |
+| Mất bao lâu, bao lần? | |
+| Insight / opportunity rút ra | |
+
+**Snapshot 3** (tùy chọn)
 
 | Trường | Nội dung |
 |---|---|
@@ -129,17 +164,28 @@ Tổng hợp:
 
 | Nguồn | Số người / số mẫu | Tín hiệu xác nhận | Tín hiệu phản bác |
 |---|---:|---|---|
-| | | | |
+| Git log repo nhóm lab Day 02 codelab (07/11/2026) — commit nội dung cuối của từng thành viên | 5 học viên | 3/5 thành viên commit nội dung cuối sau 21h (21:05, 21:28, 22:22); 1 thành viên commit "fix" lúc 22:22, merge bản cuối lúc 22:28 | 2/5 thành viên xong trước 15h30 (13:07, 15:20) → nộp sát giờ không xảy ra với mọi người; có thể phụ thuộc thời điểm bắt đầu (giả định #3) |
+| Git log lab Day 01 AI Foundation, cá nhân (06–07/11/2026) | 1 học viên | Lưu notebook 12 lần từ 20:46 tới 00:22; commit "submit day 1 lab" lúc 00:19 ngày 07/11, sau mốc 23h59 | Mới có 1 người, chưa đủ kết luận cho cả lớp |
+| Lịch sử commit repo đề Day 02 (08–09/11/2026) | 12 commit | Đề được sửa 12 commit trong ~14 giờ trước lab, có commit "Fix grading-rule conflicts", "Sua cac cho chua nhat quan trong de bai" → quy định thay đổi sát giờ (Opportunity C) | Các sửa đổi nhằm làm đề nhất quán hơn, không phải đổi yêu cầu nộp bài |
+| Artefact trong repo nhóm hôm nay (09/11/2026) | 1 repo, 4 file báo cáo cá nhân | Repo nhóm ban đầu đặt tên `Day02` thay vì `DAY02` (sai mẫu, −5 điểm), phải đổi trong buổi; 2/4 file báo cáo cá nhân có dòng tiêu đề chưa khớp tên file dù template yêu cầu "Sửa cả dòng tiêu đề phía trên cho khớp" → lỗi định dạng xảy ra ngay cả khi đã đọc đề (giả định #2) | Lỗi được phát hiện và sửa trước deadline; chưa biết có lỗi nào lọt tới lúc chấm |
+| Phỏng vấn học viên nhóm khác (snapshot 1–3) | *chờ điền* | *Điền sau khi phỏng vấn* | *Điền sau khi phỏng vấn* |
+| Ước tính thời gian đọc đề trong báo cáo CP1 | 2 thành viên | Cả 2 đều coi việc tìm quy định nộp bài trong nhiều file là bước khó nhất | Ước tính lệch nhau nhiều (15' và 35'/lab) → thời gian đọc đề không phải pain chắc chắn |
 
 **Nhóm đã sửa problem thế nào sau kiểm chứng:**
+
+- **Trước kiểm chứng:** "Đọc đề lab nhiều file mất thời gian" (nhấn vào thời gian đọc).
+- **Sau kiểm chứng:** thu hẹp thành **"bỏ sót quy định nộp bài (tên repo, tên file, tiêu đề, mục bắt buộc) và chỉ phát hiện khi đã sát deadline"**. Lý do: log cho thấy lỗi định dạng xảy ra thật ngay trong nhóm (tên repo, tiêu đề file), trong khi thời gian đọc đề giữa các thành viên lệch nhau nhiều và chưa chắc là pain.
+- **Giả định #3 chưa được xác nhận:** 2/5 học viên ở lab Day 02 codelab xong sớm, nên nộp muộn có thể do bắt đầu muộn. Nhóm không dùng "nộp muộn" làm metric chính; metric chính chuyển sang **số lỗi định dạng phát hiện trước khi nộp**.
 
 ### 3.3. Research giải pháp đã có
 
 | Công cụ / case / pattern | Link | Giải bước nào trong quy trình? | Điểm mạnh | Khoảng trống / rủi ro | Bài học cho nhóm |
 |---|---|---|---|---|---|
-| | | | | | |
-| | | | | | |
-| | | | | | |
+| GitHub Classroom autograding | https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/use-autograding | Bước tự kiểm trước khi nộp: chạy test mỗi lần học viên push, học viên xem kết quả và sửa | Đúng pattern "kiểm tự động ngay khi push", học viên thấy lỗi trước deadline | Trang tài liệu ghi GitHub Classroom **ngừng hoạt động từ 28/08/2026**; lab này không dùng Classroom mà dùng repo fork | Ý tưởng đúng nhưng công cụ đã ngừng → phải dùng thứ còn hoạt động (GitHub Actions) |
+| GitHub Actions (workflow chạy khi push) | https://docs.github.com/en/actions/writing-workflows/quickstart · https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-actions/about-billing-for-github-actions | Bước kiểm tên file, cấu trúc thư mục, mục bắt buộc: workflow trong `.github/workflows` tự chạy khi push (`on: [push]`), chạy được lệnh shell (`run:`) | Runner chuẩn của GitHub miễn phí cho repo public (theo trang billing); chạy ngay trên repo fork; không cần AI | Phải có người viết và bảo trì script; chỉ kiểm được thứ có quy tắc rõ (tên, cấu trúc, mục có hay không), không đánh giá được chất lượng nội dung | Phần lớn lỗi bị trừ điểm (tên repo, tên file, tiêu đề, thiếu file) là **Rule**, kiểm được bằng script |
+| ls-lint (+ GitHub Action chính thức) | https://ls-lint.org/ · https://github.com/ls-lint/action | Bước kiểm tên file và thư mục theo quy ước khai báo trong `.ls-lint.yml` | Công cụ có sẵn, cấu hình một file, có GitHub Action chính thức | Chỉ kiểm tên file/thư mục, không kiểm tên repo hay nội dung trong file | Không cần tự viết từ đầu phần kiểm tên file; kết hợp với checklist cho phần nội dung |
+
+**Kết luận research:** các bước kiểm định dạng (tên repo, tên file, cấu trúc, mục bắt buộc) đã có công cụ Rule làm được và không cần AI. Phần chưa có công cụ là **đối chiếu nội dung bài với rubric** (mục có đủ ý chưa, có số liệu chưa) — đây là chỗ duy nhất có thể cân nhắc AI ở CP6.
 
 ---
 
