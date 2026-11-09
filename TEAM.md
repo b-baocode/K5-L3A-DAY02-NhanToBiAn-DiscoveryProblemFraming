@@ -28,10 +28,10 @@ Gợi ý vai trò (một người có thể giữ nhiều vai): điều phối t
 | CP3 — Hội tụ nhóm                          | Ngô Gia Bảo |              | Cluster, cây OST, bảng chấm điểm               |
 | CP4 — Kiểm chứng                           | Ngô Gia Bảo |              | Assumption map, snapshot hoặc survey           |
 | CP4 — Research                             | Ngô Gia Bảo |              | Bảng research có link                          |
-| CP5 — Quy trình trước/sau                  | Nguyễn Văn Ba |              | Quy trình + bảng before/after                  |
-| CP5 — Problem Statement v0                 | Nguyễn Văn Ba |              | Problem Statement v0                           |
-| CP6 — Mức can thiệp + Problem Statement v1 | Nguyễn Văn Ba |              | Ma trận, AI Canvas, eval, Problem Statement v1 |
-| CP6 — Quyết định                           | Nguyễn Văn Ba |              | 4 rủi ro + Go/Not Yet/No-Go                    |
+| CP5 — Quy trình trước/sau                  | Nguyễn Văn Ba, Nguyễn Quang Duy | Ngô Gia Bảo, Nguyễn Thị Dung | Sơ đồ quy trình trước/sau (có Mermaid) + bảng before/after |
+| CP5 — Problem Statement v0                 | Nguyễn Văn Ba, Nguyễn Quang Duy | Ngô Gia Bảo, Nguyễn Thị Dung | Problem Statement v0, ghi nhận phản biện, chốt boundary |
+| CP6 — Mức can thiệp + Problem Statement v1 | Nguyễn Văn Ba, Nguyễn Thị Dung | Ngô Gia Bảo (góp ý chọn mức), Nguyễn Quang Duy | Ma trận so sánh 4 mức, 10 cặp eval mẫu, Problem Statement v1 |
+| CP6 — Quyết định                           | Nguyễn Văn Ba, Nguyễn Thị Dung | Ngô Gia Bảo (góp ý chọn mức), Nguyễn Quang Duy | 4 rủi ro (tổng hợp phỏng vấn của Bảo, Value = TB), Go phạm vi nhỏ, chốt pilot nội bộ |
 
 ## Cá nhân
 

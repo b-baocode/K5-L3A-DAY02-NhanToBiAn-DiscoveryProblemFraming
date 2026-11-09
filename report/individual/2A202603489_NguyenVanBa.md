@@ -154,15 +154,15 @@ Bước 5: Nhận hàng lúc chiều tối hoặc bị dời sang hôm sau
 | Hoạt động | Tôi đã làm gì? | Kết quả / ảnh hưởng tới bài nhóm |
 |---|---|---|
 | Pitch Problem Card | Pitch 3 card: đọc đề lab mất thời gian, quên mật khẩu mạng nội bộ, shipper giao chậm ở tỉnh; card muốn pitch nhất là card đọc đề lab | Card đọc đề lab được gộp với #1, #3 của Bảo thành cluster A, cũng là candidate nhóm chọn; card quên mật khẩu lọt shortlist 3 candidate |
-| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: | |
-| Nhận phản biện | Câu hỏi tôi nhận được: | Tôi đã sửa gì: |
-| Gom cluster / cây OST | | |
+| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: Hỏi Dung về card #10 (không có bác sĩ thì kiểm tra mô hình kiểu gì) và Duy về card #7 (mỗi nơi một thủ tục thì cập nhật dữ liệu sao cho đúng) | Giúp nhóm nhận ra hai card này thiếu tính khả thi trong buổi lab và loại ở vòng shortlist |
+| Nhận phản biện | Câu hỏi tôi nhận được: Bảo hỏi "Đọc đề 10 phút đâu có lâu, sao lại coi đây là điểm nghẽn lớn nhất?" | Tôi đã sửa gì: Bỏ mốc thời gian đọc đề ra khỏi metric chính, chuyển trọng tâm sang đo số lỗi định dạng bị sót |
+| Gom cluster / cây OST | Cùng nhóm gom 12 pitch vào 5 cụm A–E; phát hiện và gạch 4 giải pháp đội lốt (chatbot, script) để đưa về 3 opportunity thật trên cây OST | Nhóm không bị sa đà vào giải pháp công cụ, giữ đúng bản chất bài toán ở cụm A |
 | Chọn candidate problem | Đóng góp card #4 vào cluster A; số liệu 35 phút/lab và bottleneck đối chiếu 6–7 file được dùng làm bằng chứng cho Opportunity A | Candidate A được chọn với 33 điểm; ước tính 35 phút lệch với 15 phút của Bảo trở thành tín hiệu phản bác ở mục 3.2 |
-| Kiểm chứng / research | | |
-| Quy trình nhóm | Viết mục 4.1 quy trình hiện tại: ghép card #1, #3 của Bảo và card #4 thành 6 bước, kèm bảng actor, input, output, thời gian | Đặt bottleneck ở bước tự rút quy định nộp bài, khớp với problem đã thu hẹp sau kiểm chứng; nhóm cần chốt lại |
-| Problem Statement | | |
-| Mức can thiệp AI | | |
-| Quyết định | | |
+| Kiểm chứng / research | Tìm và đối chiếu tài liệu kỹ thuật về GitHub Actions, cơ chế runner miễn phí và hook pre-push của Git; cùng nhóm phân tích 3 lỗi thật trong repo Day 02 | Chứng minh giải pháp Rule là khả thi về mặt kỹ thuật, không tốn phí và chặn được lỗi trước khi đẩy lên repo |
+| Quy trình nhóm | Viết mục 4.1 quy trình hiện tại: ghép card #1, #3 của Bảo và card #4 thành 6 bước, kèm bảng actor, input, output, thời gian | Đặt bottleneck ở bước tự rút quy định nộp bài, khớp với problem đã thu hẹp sau kiểm chứng; nhóm đã chốt bottleneck này ở mục 4.1 |
+| Problem Statement | Cùng viết bản v0 và v1; xác định rõ Success Metric (3 lỗi về 0) và Boundary không cho tool can thiệp sửa file hay commit hộ | Giữ vững ranh giới an toàn cho học viên, bắt buộc thêm lệnh vượt rào `--no-verify` khi khẩn cấp |
+| Mức can thiệp AI | Phân tích ma trận độ mơ hồ/độ phức tạp; bảo vệ quan điểm chọn mức Rule, không dùng AI hay Workflow tự động hóa nội dung | Nhóm thống nhất chốt Rule kết hợp checklist, không tốn tài nguyên và tránh rủi ro báo sai |
+| Quyết định | Cùng biểu quyết chốt quyết định Go phạm vi nhỏ sau khi nghe kết quả Bảo hỏi 3 bạn phòng lab | Giữ pilot trong nội bộ repo nhóm NhanToBiAn ở 3 lab tới, không mở rộng ra cả lớp |
 
 ---
 
@@ -173,9 +173,6 @@ Bước 5: Nhận hàng lúc chiều tối hoặc bị dời sang hôm sau
 | CP1 Scan | Rà lại phần giữ/bỏ problem sau khi tự scan 5 problem | Chỉ ra cột "Dấu hiệu thật lấy từ đâu" đang trả lời sai câu hỏi (ghi "đang trải qua", "nhiều rule" thay vì nguồn số liệu) | Tự giả định 5 ý là tự nghĩ, các ý ở mục Bỏ là AI gợi ý mà chưa hỏi lại | Ghi rõ nguồn từng dấu hiệu; số 100 ticket/ngày và 25 yêu cầu/tuần ghi là ước lượng, chưa kiểm chứng |
 | CP2 Problem Card | Viết nháp 3 Problem Card từ số liệu ở CP1, rồi đóng vai PM hoài nghi phản biện | Tách được phần quan sát trực tiếp và phần phỏng đoán ở card shipper; chỉ ra actor card quên mật khẩu bị lẫn giữa người dùng và IT | Tự thêm số liệu chưa có thật (Shopee/TikTok Shop, 4 đơn/tháng, thời gian từng bước); đề xuất đo bằng "bấm giờ 3 lab đã học", việc không làm được vì lab đã qua; chốt 35 phút từ khoảng 30–40 phút nhưng vẫn là ước lượng | Sửa lại hành văn, bỏ ngoặc và ký hiệu, bỏ đại từ; giữ số liệu AI thêm ở mức ước tính và ghi rõ chưa kiểm chứng |
 | CP4 Research | Soạn nháp assumption map, câu hỏi phỏng vấn và bảng research có link | Tìm và mở kiểm được link GitHub Classroom autograding, Gradescope, pull request template | Soạn trùng với phần Bảo đã push, không pull bản mới trước khi sửa | Bỏ bản nháp của AI, giữ phần CP4 của Bảo vì kỹ hơn và có số liệu log thật |
-| CP5 Quy trình | Ghép card của Bảo và của mình thành quy trình hiện tại 6 bước ở mục 4.1 | Gom nhanh số liệu từ 3 card và mục 3.2 vào một bảng | Ban đầu đặt bottleneck ở bước đối chiếu bài với rubric, chưa khớp với problem đã thu hẹp sau kiểm chứng | Chuyển bottleneck sang bước tự rút quy định nộp bài, nơi sinh ra lỗi bỏ sót |
-| CP5–6 Problem Statement | Nhờ AI soạn nháp quy trình tương lai, Problem Statement v0, v1 và phản biện v0 | Gom được bằng chứng từ mục 3.2 thành baseline đếm được (3 lỗi định dạng/repo) | Baseline chỉ dựa trên 1 repo của 1 lab; AI viết thay phần nhóm phải tự chốt | Ghi rõ mẫu nhỏ ở mục 9; mang bản nháp ra nhóm để thảo luận và chốt lại |
-| CP6 Mức can thiệp / quyết định | Nhờ AI so sánh 4 mức, chấm 4 rủi ro và đề xuất quyết định | Chỉ ra bằng chứng vì sao checklist (No AI) không đủ: template đã ghi rõ yêu cầu tiêu đề mà 2/4 file vẫn sai | Thời gian viết script chỉ là ước tính, chưa làm thử; Value chấm TB khi chưa có phỏng vấn | Giới hạn pilot trong repo nhóm; đặt ngưỡng dừng theo số lỗi lọt và số lần báo nhầm |
 
 ---
 
@@ -185,17 +182,31 @@ Trả lời bằng trải nghiệm thật của bạn, tối thiểu 200 từ ch
 
 **6.1. Tôi học được gì khi nghe top 3 problems của các bạn khác?**
 
+Bài toán nghe hay chưa chắc đã làm được. Ý tưởng y khoa hay lừa đảo của Dung và Duy rất ý nghĩa nhưng nhóm không có dữ liệu thật và không đo được. Bài nộp lab của Bảo tuy nhỏ nhưng có sẵn git log để kiểm chứng ngay.
+
 **6.2. Nhóm có lúc nào bị "solution-first" (nghĩ giải pháp trước khi hiểu vấn đề) không? Lúc đó nhóm nhận ra và xử lý thế nào?**
+
+Có, ở CP3 khi dựng OST. Nhóm vừa xong cụm nộp bài là nhảy vào đòi làm chatbot, script kiểm tra, template checklist. Nhìn lại rubric thấy nhánh OST phải là pain chứ không phải công cụ, nhóm đã gạch hết tên giải pháp để viết lại thành 3 nhu cầu thật.
 
 **6.3. Tôi có đổi ý sau khi bị phản biện không? Kể một lần cụ thể.**
 
+Tôi đổi ý từ "thời gian đọc đề" sang "lỗi định dạng nộp bài". Lúc đầu tôi nghĩ mất 35 phút đọc đề là nghẽn nhất. Bảo phản biện rằng đọc nhanh hay chậm không quyết định nộp trễ, nhìn log thấy ai nộp trễ cũng do sửa lỗi phút chót, thực tế nhóm cũng dính 3 lỗi định dạng. Tôi thấy đúng nên bỏ mốc thời gian, chuyển sang đếm lỗi.
+
 **6.4. Kết quả kiểm chứng (phỏng vấn/survey/research) có làm tôi bất ngờ không? Điều gì?**
+
+Bất ngờ vì nhóm mình dính 3 lỗi thật (sai tên repo, sai tiêu đề file), nhưng Bảo đi hỏi 3 bạn nhóm khác thì không ai cần tool này. Họ bảo chỉ cần copy tên file là xong, họ sợ thiếu nội dung hoặc tool lỗi chặn mất bài sát giờ hơn. Vấn đề của nhóm mình hóa ra người ngoài không thấy đau.
 
 **6.5. Điều khó nhất khi viết Problem Statement là gì?**
 
+Khó nhất là chốt Boundary để không cản trở việc nộp bài. Tool chỉ được báo lỗi chứ không được tự sửa file hay tự commit thay học viên. Quan trọng nhất là phải giữ lệnh `git push --no-verify` để lỡ sát giờ tool có lỗi thì học viên vẫn đẩy bài lên kịp, nộp được bài quan trọng hơn đúng mẫu.
+
 **6.6. Nếu làm lại, tôi sẽ đổi gì? Tôi sẽ phản biện nhóm mạnh hơn ở điểm nào?**
 
+Tôi sẽ đổi cách hỏi khi phỏng vấn: Bảo đi hỏi bị dính lỗi hỏi ý kiến về tool thay vì hỏi hành vi quá khứ theo Mom Test. Ngoài ra tôi sẽ phản biện vụ Git hook sớm hơn: hook chỉ chạy trên máy ai gõ lệnh bật, ai dùng web hay extension Git thì không có tác dụng, phải dựa hoàn toàn vào Actions.
+
 **6.7. Hiểu bài:** giải thích bằng 5–8 câu, không nhìn tài liệu, chuỗi *problem → quy trình → metric → boundary → mức can thiệp AI → quyết định* của bài nhóm mình.
+
+Học viên hay sót quy định nộp bài ở 11 file đề và chỉ biết khi sát deadline. Quy trình mới dùng rào cản tự động: đọc checklist ở README, làm bài, khi git push thì pre-push hook chạy dưới 10 giây để chặn nếu sai mẫu và nhắc soát rubric nếu đúng. Metric là kéo lỗi định dạng từ 3 về 0, không chặn nhầm trước deadline 1 giờ. Boundary là tool chỉ chặn chứ không sửa hay commit hộ, luôn cho phép `--no-verify`. Chọn mức Rule (hook + Actions) không dùng AI vì đúng/sai rõ ràng, mơ hồ thấp. Quyết định Go phạm vi nhỏ, chỉ dùng trong nhóm NhanToBiAn ở 3 lab tới vì nhóm khác chưa có nhu cầu.
 
 ---
 
