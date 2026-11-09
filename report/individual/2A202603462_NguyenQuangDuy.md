@@ -1,4 +1,4 @@
-# Báo cáo cá nhân — 2A02603462_NguyenQuangDuy
+# Báo cáo cá nhân — 2A202603462_NguyenQuangDuy
 
 > Đổi tên file theo quy tắc `MSSV_HoTen.md`, ví dụ `20241234_NguyenVanAn.md` (MSSV trước, dấu `_`, họ tên viết liền không dấu). Sửa cả dòng tiêu đề phía trên cho khớp.
 > Template chi tiết và prompt mẫu cho từng mục: [docs/01-worksheet.md](../../docs/01-worksheet.md).
@@ -64,7 +64,13 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 
 Quy trình nháp hiện tại:
 
-```text
+```[1 Tìm trên mạng/hỏi người quen]
+→ [2 Đối chiếu nguồn: 30–60'] ← BOTTLENECK 1
+→ [3 Chuẩn bị giấy tờ]
+→ [4 Nộp trực tuyến/trực tiếp]
+→ [5 Bổ sung nếu bị yêu cầu: 60–180'/lần] ← BOTTLENECK 2
+→ [6 Chờ và nhận kết quả]
+(Thời gian là ước tính, chưa đo)
 
 ```
 
@@ -85,7 +91,13 @@ Quy trình nháp hiện tại:
 
 Quy trình nháp hiện tại:
 
-```text
+```[1 Nhận tin nhắn/cuộc gọi]
+→ [2 Tự đánh giá theo cảm nhận] ← RỦI RO NHẤT
+→ [3 Gọi con cháu nếu nghi ngờ]
+→ [4 Chờ phản hồi: 5–60'] ← BOTTLENECK
+→ [5 Con cháu kiểm tra]
+→ [6 Bỏ qua hoặc làm theo]
+(Thời gian là ước tính, chưa đo)
 
 ```
 
@@ -106,21 +118,31 @@ Quy trình nháp hiện tại:
 
 Quy trình nháp hiện tại:
 
-```text
+```[1 Kiểm tra đồ còn lại]
+→ [2 Nhớ khẩu vị, món đã ăn]
+→ [3 Chọn món theo ngân sách: bước 2–3 mất 15–30'/tuần] ← BOTTLENECK
+→ [4 Viết danh sách đi chợ]
+→ [5 Đổi món theo giá/hàng có sẵn]
+→ [6 Điều chỉnh khi lịch ăn thay đổi]
+(Thời gian là ước tính, chưa đo)
 
 ```
 
 ### Card muốn pitch nhất
 
-- Card số: #2. Lên thực đơn và danh sách đi chợ
+- Card số: #3. Lên thực đơn và danh sách đi chợ
 - Vì sao: Dễ triển khai và ứng dụng
-- Câu hỏi muốn nhóm phản biện: 
+- Câu hỏi muốn nhóm phản biện: Nếu xoay vòng thực đơn 4 tuần đã đủ, phần nào còn thực sự cần AI?
 
 ### AI đã phản biện card thế nào
 
 | Điểm yếu AI chỉ ra | Đồng ý? | Đã sửa gì |
 |---|---|---|
-| | | |
+Card thủ tục: actor quá rộng, chưa chọn một thủ tục và địa phương |	Có|	Chưa sửa trong card hiện tại
+Card thủ tục: quy trình và số phút chưa được quan sát thực tế	|Có	|Chưa sửa trong card hiện tại
+Card thủ tục: bottleneck gộp 2 bước, bước 5 có thể chỉ là hậu quả|	Có|	Chưa sửa trong card hiện tại
+Card thực đơn: baseline 60 phút không khớp bottleneck 15–30 phút|Có |Chưa sửa trong card hiện tại
+Card thực đơn: chưa cần AI Agent vì không có hành động cần tự lập kế hoạch hay gọi công cụ	|Có|Vẫn giữ AI Agent trong card hiện tại
 
 ---
 
@@ -146,11 +168,11 @@ Quy trình nháp hiện tại:
 | Checkpoint | Tôi dùng AI để làm gì? | AI hữu ích ở đâu? | AI sai hoặc hời hợt ở đâu? | Tôi sửa gì bằng nhận định của mình? |
 |---|---|---|---|---|
 | CP1 Scan | Nhờ AI giúp bỏ các quyết định chưa phù hợp | Hỗ trợ đưa ra quyết định nhanh | | |
-| CP2 Problem Card | | | | |
-| CP4 Research |  |  |  |  |
-| CP5 Quy trình |  |  |  |  |
-| CP5–6 Problem Statement |  |  |  |  |
-| CP6 Mức can thiệp / quyết định |  |  |  |  |
+| CP2 Problem Card | Xếp hạng, điền 3 card, phản biện card thủ tục và thực đơn | Chỉ ra actor rộng, quy trình chưa quan sát, bottleneck và metric chưa chắc | Quy trình, số phút và target là ước tính của AI; gán Workflow trước khi kiểm chứng nguyên nhân | |
+| CP4 Research | Rà lại các công cụ và bằng chứng trong báo cáo nhóm | Xác nhận các thông tin chính; chỉ ra việc phải bật Actions trên fork cần thử trực tiếp |  |  |
+| CP5 Quy trình |  | Tách điểm phát sinh lỗi với bottleneck; đưa chi phí chuẩn bị vào so sánh | Thời gian vẫn là ước tính; bottleneck mới chưa được xác nhận với người mắc lỗi |  |
+| CP5–6 Problem Statement | rà problem, baseline, metric | Chỉ ra “sát deadline” chưa đủ bằng chứng; baseline không đếm tại commit cuối | Mốc 24 giờ trước deadline là đề xuất, chưa dựa trên dữ liệu |  |
+| CP6 Mức can thiệp / quyết định | So sánh 4 mức, góp ý rủi ro và ngưỡng dừng | Chỉ ra quy định có đúng/sai rõ nên Rule phù hợp hơn AI | Mức rủi ro chỉ dựa trên suy luận, chưa chạy thử bộ kiểm |  |
 
 ---
 
@@ -177,5 +199,7 @@ Tôi sẽ thêm các vấn đề cụ thể hơn cho card của mình
 ---
 
 ## 7. Tài liệu tham khảo
-
+GitHub Changelog: GitHub Classroom deprecated
+GitHub Docs: GitHub Actions billing
+ls-lint GitHub Action
 -
