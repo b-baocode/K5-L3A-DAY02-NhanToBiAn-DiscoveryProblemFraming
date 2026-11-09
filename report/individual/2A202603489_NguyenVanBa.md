@@ -10,7 +10,7 @@
 - MSSV: 2A202603489
 - Email trường (không bắt buộc, repo có thể để public): 
 - Tên nhóm: NhanToBiAn
-- Link repo nhóm: https://github.com/b-baocode/K5-L3A-Day02-NhanToBiAn-DiscoveryProblemFraming
+- Link repo nhóm: https://github.com/b-baocode/K5-L3A-DAY02-NhanToBiAn-DiscoveryProblemFraming
 
 ---
 
