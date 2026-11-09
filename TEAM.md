@@ -10,12 +10,12 @@
 
 ## Thành viên
 
-| STT | Họ và tên | MSSV | Vai trò trong nhóm | Tài khoản GitHub |
-|---:|---|---|---|---|
-| 1 | Ngô Gia Bảo | 2A202603482 | Nhóm trưởng | b-baocode |
-| 2 | Nguyễn Văn Ba | 2A202603489 | | xtraiter |
-| 3 | Nguyễn Quang Duy | 2A202603462 | | nduy120505 |
-| 4 | Nguyễn Thị Dung | 2A202603508 | | zoesayhii |
+| STT | Họ và tên        | MSSV        | Vai trò trong nhóm | Tài khoản GitHub |
+| --: | ---------------- | ----------- | ------------------ | ---------------- |
+|   1 | Ngô Gia Bảo      | 2A202603482 | Nhóm trưởng        | b-baocode        |
+|   2 | Nguyễn Văn Ba    | 2A202603489 |                    | xtraiter         |
+|   3 | Nguyễn Quang Duy | 2A202603462 |                    | nduy120505       |
+|   4 | Nguyễn Thị Dung  | 2A202603508 |                    | zoesayhii        |
 
 Không ghi email hay số điện thoại vào bảng này, vì repo có thể để public.
 
@@ -23,15 +23,15 @@ Gợi ý vai trò (một người có thể giữ nhiều vai): điều phối t
 
 ## Phân công theo checkpoint
 
-| Checkpoint | Người chính | Người hỗ trợ | Sản phẩm |
-|---|---|---|---|
-| CP3 — Hội tụ nhóm | Ngô Gia Bảo | | Cluster, cây OST, bảng chấm điểm |
-| CP4 — Kiểm chứng | | | Assumption map, snapshot hoặc survey |
-| CP4 — Research | | | Bảng research có link |
-| CP5 — Quy trình trước/sau | | | Quy trình + bảng before/after |
-| CP5 — Problem Statement v0 | | | Problem Statement v0 |
-| CP6 — Mức can thiệp + Problem Statement v1 | | | Ma trận, AI Canvas, eval, Problem Statement v1 |
-| CP6 — Quyết định | | | 4 rủi ro + Go/Not Yet/No-Go |
+| Checkpoint                                 | Người chính | Người hỗ trợ | Sản phẩm                                       |
+| ------------------------------------------ | ----------- | ------------ | ---------------------------------------------- |
+| CP3 — Hội tụ nhóm                          | Ngô Gia Bảo |              | Cluster, cây OST, bảng chấm điểm               |
+| CP4 — Kiểm chứng                           |             |              | Assumption map, snapshot hoặc survey           |
+| CP4 — Research                             |             |              | Bảng research có link                          |
+| CP5 — Quy trình trước/sau                  |             |              | Quy trình + bảng before/after                  |
+| CP5 — Problem Statement v0                 |             |              | Problem Statement v0                           |
+| CP6 — Mức can thiệp + Problem Statement v1 |             |              | Ma trận, AI Canvas, eval, Problem Statement v1 |
+| CP6 — Quyết định                           |             |              | 4 rủi ro + Go/Not Yet/No-Go                    |
 
 ## Cá nhân
 
@@ -57,5 +57,3 @@ Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `
 - Commit "Them bao cao ca nhan CP1-CP2 - Nguyen Van Ba"
 
 **Điều mình học được từ phần nhóm:**
-
--
