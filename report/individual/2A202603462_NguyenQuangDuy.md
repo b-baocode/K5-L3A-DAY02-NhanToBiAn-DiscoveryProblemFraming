@@ -127,17 +127,17 @@ Quy trình nháp hiện tại:
 ## 4. Tôi đã tham gia phần nào (CP3 → CP7)
 
 | Hoạt động | Tôi đã làm gì? | Kết quả / ảnh hưởng tới bài nhóm |
-|---|---|---|
-| Pitch Problem Card | | |
-| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: | |
-| Nhận phản biện | Câu hỏi tôi nhận được: | Tôi đã sửa gì: |
-| Gom cluster / cây OST | | |
-| Chọn candidate problem | | |
-| Kiểm chứng / research | | |
-| Quy trình nhóm | | |
-| Problem Statement | | |
-| Mức can thiệp AI | | |
-| Quyết định | | |
+|---        |---             |---                               |
+| Pitch Problem Card | Đưa ra câu hỏi cho các problem card | Giúp nhóm đưa ra quyết định, loại những card khó hoặc không khả thi |
+| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: |  |
+| Nhận phản biện | Câu hỏi tôi nhận được: Lọc cuộc gọi có gây ra thiệt hại không? Có cách nào để kiểm chứng không | Tôi đã sửa gì: |
+| Gom cluster / cây OST | Đưa ra các cách để xếp nhóm | Các card được chia ra nhìn trực quan và dễ đưa ra option hơn |
+| Chọn candidate problem | Đặt câu hỏi về độ khả thi | Giúp nhóm đưa ra quyết định |
+| Kiểm chứng / research |  |  |
+| Quy trình nhóm |  |  |
+| Problem Statement |  |  |
+| Mức can thiệp AI | Prompt AI giúp nhóm tìm ra các điểm mạnh hoặc điểm yếu cần cải thiện | Hỗ trợ nhóm đưa ra quyết định  |
+| Quyết định |  |  |
 
 ---
 
@@ -145,12 +145,12 @@ Quy trình nháp hiện tại:
 
 | Checkpoint | Tôi dùng AI để làm gì? | AI hữu ích ở đâu? | AI sai hoặc hời hợt ở đâu? | Tôi sửa gì bằng nhận định của mình? |
 |---|---|---|---|---|
-| CP1 Scan | | | | |
+| CP1 Scan | Nhờ AI giúp bỏ các quyết định chưa phù hợp | Hỗ trợ đưa ra quyết định nhanh | | |
 | CP2 Problem Card | | | | |
-| CP4 Research | | | | |
-| CP5 Quy trình | | | | |
-| CP5–6 Problem Statement | | | | |
-| CP6 Mức can thiệp / quyết định | | | | |
+| CP4 Research |  |  |  |  |
+| CP5 Quy trình |  |  |  |  |
+| CP5–6 Problem Statement |  |  |  |  |
+| CP6 Mức can thiệp / quyết định |  |  |  |  |
 
 ---
 
@@ -159,18 +159,20 @@ Quy trình nháp hiện tại:
 Trả lời bằng trải nghiệm thật của bạn, tối thiểu 200 từ cho các câu 6.1–6.6 (không tính 6.7, câu này được chấm riêng ở tiêu chí C5). **Không dùng AI để viết thay.**
 
 **6.1. Tôi học được gì khi nghe top 3 problems của các bạn khác?**
-
+Tôi có thêm cái nhìn trực quan hơn về các vấn đề mà các bạn khác đưa ra
 **6.2. Nhóm có lúc nào bị "solution-first" (nghĩ giải pháp trước khi hiểu vấn đề) không? Lúc đó nhóm nhận ra và xử lý thế nào?**
-
+Không
 **6.3. Tôi có đổi ý sau khi bị phản biện không? Kể một lần cụ thể.**
-
+Không
 **6.4. Kết quả kiểm chứng (phỏng vấn/survey/research) có làm tôi bất ngờ không? Điều gì?**
-
+Không
 **6.5. Điều khó nhất khi viết Problem Statement là gì?**
-
+Khá khó để nghĩ ra 
 **6.6. Nếu làm lại, tôi sẽ đổi gì? Tôi sẽ phản biện nhóm mạnh hơn ở điểm nào?**
-
+Tôi sẽ thêm các vấn đề cụ thể hơn cho card của mình
 **6.7. Hiểu bài:** giải thích bằng 5–8 câu, không nhìn tài liệu, chuỗi *problem → quy trình → metric → boundary → mức can thiệp AI → quyết định* của bài nhóm mình.
+
+
 
 ---
 
