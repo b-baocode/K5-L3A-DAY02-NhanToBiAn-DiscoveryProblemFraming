@@ -56,6 +56,10 @@ Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `
 - `group_report.md` mục 2.1 (dòng #4, #5, #6), mục 2.2 (cluster A, C, E), mục 2.3 (Opportunity A), mục 2.4 (shortlist #5)
 - Commit "Them bao cao ca nhan CP1-CP2 - Nguyen Van Ba"
 
+**Điều mình học được từ phần nhóm:**
+
+-
+
 ### NguyenQuangDuy-2A202603462
 
 **Phần việc phụ trách:**
