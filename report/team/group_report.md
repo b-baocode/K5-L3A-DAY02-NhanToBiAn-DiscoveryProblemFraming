@@ -8,7 +8,7 @@
 - Tên nhóm: NhanToBiAn
 - Thành viên: xem `TEAM.md`
 - Candidate problem được chọn (1 câu): Học viên bỏ sót quy định nộp bài (tên repo, tên file, tiêu đề, mục bắt buộc) nằm rải rác ở nhiều file và chỉ phát hiện khi đã sát deadline
-- Quyết định cuối: Go, phạm vi nhỏ — Rule (bộ kiểm tự động + checklist), không dùng AI
+- Quyết định cuối: Go, phạm vi nhỏ — Rule (rào cản pre-push + Actions kiểm lại + checklist), không dùng AI
 
 ---
 
@@ -89,7 +89,7 @@ Lý do chấm:
 - **#8 Tin nhắn lừa đảo:** thiệt hại lớn nhưng khó đo tần suất, không kiểm chứng được với người lớn tuổi trong buổi lab.
 - **#2 Lỗi API, #6 Shipper, #9 Thực đơn:** phạm vi hẹp hoặc pain nhẹ; #2 nhiều khả năng chỉ cần Rule (retry, fallback).
 
-**Xử lý bất đồng (nếu có):** [Nhóm điền sau khi thảo luận: ai muốn chọn candidate khác, vì sao, nhóm chốt thế nào]
+**Xử lý bất đồng (nếu có):** Không có bất đồng khi chọn candidate. A hơn hai candidate xếp sau 7 điểm (33 so với 26), và 2 thành viên (Bảo, Ba) tự tìm ra cùng một pain, nên nhóm chốt A. Điểm còn bàn là thời gian đọc đề có phải pain thật không (ước tính 15' và 35' lệch nhau). Nhóm xử lý bằng cách không dùng thời gian đọc đề làm metric chính, chuyển sang đếm lỗi định dạng (mục 3.2).
 
 ---
 
@@ -162,14 +162,14 @@ Cách đã dùng:
 
 Tổng hợp:
 
-| Nguồn                                                                                        |              Số người / số mẫu | Tín hiệu xác nhận                                                                                                                                                                                                                                                              | Tín hiệu phản bác                                                                                                                         |
-| -------------------------------------------------------------------------------------------- | -----------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| Git log repo nhóm lab Day 02 codelab (07/11/2026) — commit nội dung cuối của từng thành viên |                     5 học viên | 3/5 thành viên commit nội dung cuối sau 21h (21:05, 21:28, 22:22); 1 thành viên commit "fix" lúc 22:22, merge bản cuối lúc 22:28                                                                                                                                               | 2/5 thành viên xong trước 15h30 (13:07, 15:20) → nộp sát giờ không xảy ra với mọi người; có thể phụ thuộc thời điểm bắt đầu (giả định #3) |
-| Git log lab Day 01 AI Foundation, cá nhân (06–07/11/2026)                                    |                     1 học viên | Lưu notebook 12 lần từ 20:46 tới 00:22; commit "submit day 1 lab" lúc 00:19 ngày 07/11, sau mốc 23h59                                                                                                                                                                          | Mới có 1 người, chưa đủ kết luận cho cả lớp                                                                                               |
-| Lịch sử commit repo đề Day 02 (08–09/11/2026)                                                |                      12 commit | Đề được sửa 12 commit trong ~14 giờ trước lab, có commit "Fix grading-rule conflicts", "Sua cac cho chua nhat quan trong de bai" → quy định thay đổi sát giờ (Opportunity C)                                                                                                   | Các sửa đổi nhằm làm đề nhất quán hơn, không phải đổi yêu cầu nộp bài                                                                     |
-| Artefact trong repo nhóm hôm nay (09/11/2026)                                                | 1 repo, 4 file báo cáo cá nhân | Repo nhóm ban đầu đặt tên `Day02` thay vì `DAY02` (sai mẫu, −5 điểm), phải đổi trong buổi; 2/4 file báo cáo cá nhân có dòng tiêu đề chưa khớp tên file dù template yêu cầu "Sửa cả dòng tiêu đề phía trên cho khớp" → lỗi định dạng xảy ra ngay cả khi đã đọc đề (giả định #2) | Lỗi được phát hiện và sửa trước deadline; chưa biết có lỗi nào lọt tới lúc chấm                                                           |
-| Phỏng vấn học viên nhóm khác (snapshot 1–3)                                                  |           3 bạn cùng phòng lab | Cả 3 đếu cảm thấy không quá hứng thú với chức năng này                                                                                                                                                                                                                         | Đây là vấn đề mà có 3 thành viên trong nhóm gặp phải                                                                                      |
-| Ước tính thời gian đọc đề trong báo cáo CP1                                                  |                   2 thành viên | Cả 2 đều coi việc tìm quy định nộp bài trong nhiều file là bước khó nhất                                                                                                                                                                                                       | Ước tính lệch nhau nhiều (15' và 35'/lab) → thời gian đọc đề không phải pain chắc chắn                                                    |
+| Nguồn | Số người / số mẫu | Tín hiệu xác nhận | Tín hiệu phản bác |
+|---|---:|---|---|
+| Git log repo nhóm lab Day 02 codelab (07/11/2026) — commit nội dung cuối của từng thành viên | 5 học viên | 3/5 thành viên commit nội dung cuối sau 21h (21:05, 21:28, 22:22); 1 thành viên commit "fix" lúc 22:22, merge bản cuối lúc 22:28 | 2/5 thành viên xong trước 15h30 (13:07, 15:20) → nộp sát giờ không xảy ra với mọi người; có thể phụ thuộc thời điểm bắt đầu (giả định #3) |
+| Git log lab Day 01 AI Foundation, cá nhân (06–07/11/2026) | 1 học viên | Lưu notebook 12 lần từ 20:46 tới 00:22; commit "submit day 1 lab" lúc 00:19 ngày 07/11, sau mốc 23h59 | Mới có 1 người, chưa đủ kết luận cho cả lớp |
+| Lịch sử commit repo đề Day 02 (08–09/11/2026) | 12 commit | Đề được sửa 12 commit trong ~14 giờ trước lab, có commit "Fix grading-rule conflicts", "Sua cac cho chua nhat quan trong de bai" → quy định thay đổi sát giờ (Opportunity C) | Các sửa đổi nhằm làm đề nhất quán hơn, không phải đổi yêu cầu nộp bài |
+| Artefact trong repo nhóm hôm nay (09/11/2026) | 1 repo, 4 file báo cáo cá nhân | Repo nhóm ban đầu đặt tên `Day02` thay vì `DAY02` (sai mẫu, −5 điểm), phải đổi trong buổi; 2/4 file báo cáo cá nhân có dòng tiêu đề chưa khớp tên file dù template yêu cầu "Sửa cả dòng tiêu đề phía trên cho khớp" → lỗi định dạng xảy ra ngay cả khi đã đọc đề (giả định #2) | Lỗi tên repo được phát hiện và sửa trong buổi; 2 lỗi tiêu đề vẫn còn tại thời điểm viết báo cáo, chỉ được phát hiện khi rà lại cả repo. Đây là 3 lỗi dùng làm baseline ở mục 5 |
+| Phỏng vấn học viên nhóm khác (snapshot 1–3)                                                  |           3 bạn cùng phòng lab | Cả 3 đều cảm thấy không quá hứng thú với chức năng này                                                                                                                                                                                                                         | Đây là vấn đề mà có 3 thành viên trong nhóm gặp phải                                                                                      |
+| Ước tính thời gian đọc đề trong báo cáo CP1 | 2 thành viên | Cả 2 đều coi việc tìm quy định nộp bài trong nhiều file là bước khó nhất | Ước tính lệch nhau nhiều (15' và 35'/lab) → thời gian đọc đề không phải pain chắc chắn |
 
 **Nhóm đã sửa problem thế nào sau kiểm chứng:**
 
@@ -223,30 +223,37 @@ Ghi rõ bước nào **Rule**, bước nào **AI**, bước nào **con người*
 ```text
 TƯƠNG LAI — mỗi lab, không có bước AI
 
-[1 Đọc checklist "Phải nộp gì" ở đầu README: 2–5']      ← NO AI (checklist viết 1 lần/lab, trích dẫn file gốc)
-→ [2 Đọc file chi tiết khi cần: 10–15']                  ← CON NGƯỜI
-→ [3 Làm bài, commit + push như bình thường]             ← CON NGƯỜI
-→ [4 Bộ kiểm tự chạy mỗi lần push: < 2']                 ← RULE (GitHub Actions + ls-lint)
+[1 Đọc checklist "Phải nộp gì" ở đầu README: 2–5']        ← NO AI (checklist viết 1 lần/lab, trích dẫn file gốc)
+→ [2 Bật rào cản, 1 lần/repo: 1']                          ← CON NGƯỜI (git config core.hooksPath .githooks)
+→ [3 Đọc file chi tiết khi cần: 10–15']                    ← CON NGƯỜI
+→ [4 Làm bài, commit]                                      ← CON NGƯỜI
+→ [5 git push → hook pre-push tự kiểm trên máy: < 10 giây] ← RULE (RÀO CẢN)
       kiểm: tên repo đúng mẫu DAY02 · tên file MSSV_HoTen.md · tiêu đề khớp tên file · đủ các mục bắt buộc, mục không trống
-→ [5 Đọc báo lỗi, tự sửa, push lại: 2–5']                ← CON NGƯỜI (boundary: bộ kiểm chỉ báo lỗi, không tự sửa, không tự commit)
-→ [6 Tự đối chiếu nội dung với rubric: ~60']            ← CON NGƯỜI (ngoài phạm vi bộ kiểm)
-→ [7 Nộp link LMS: 2']                                   ← CON NGƯỜI
+      sai quy cách → CHẶN push, in lỗi kèm trích dẫn file đề
+      đúng quy cách → cho push, in NHẮC NHỞ các mục nội dung bộ kiểm không kiểm được (đối chiếu rubric, reflection tự viết…)
+→ [6 Sửa theo báo lỗi, push lại: 2–5']                     ← CON NGƯỜI
+→ [7 GitHub Actions kiểm lại trên repo: < 2']             ← RULE (LƯỚI AN TOÀN: bắt lỗi khi push từ máy chưa bật hook, hoặc sửa file trên web)
+→ [8 Tự đối chiếu nội dung với rubric: ~60']             ← CON NGƯỜI (ngoài phạm vi bộ kiểm)
+→ [9 Nộp link LMS: 2']                                     ← CON NGƯỜI
 
-Boundary: bộ kiểm không đổi tên, không sửa file, không commit, không chấm nội dung;
+Boundary: bộ kiểm chặn push nhưng không đổi tên, không sửa file, không tự commit, không chấm nội dung;
 khi kết quả bộ kiểm khác với file đề, file đề là quy định chính thức.
-Phương án quay về: Actions không chạy hoặc báo nhầm → tick tay checklist ở bước 1,
-1 thành viên soát chéo tên repo/file/tiêu đề trước deadline 1 giờ; người viết bộ kiểm sửa rule.
+Học viên luôn được vượt rào bằng `git push --no-verify` khi chắc chắn bộ kiểm sai hoặc sát deadline:
+nộp được bài quan trọng hơn đúng quy cách; mỗi lần vượt rào báo nhóm trưởng để sửa rule.
+Phương án quay về: hook chặn nhầm → vượt rào bằng --no-verify, chuyển hook sang chế độ chỉ nhắc (cảnh báo nhưng vẫn cho push);
+hook và Actions đều không chạy → tick tay checklist ở bước 1, 1 thành viên soát chéo trước deadline 1 giờ.
 ```
 
 ### 4.3. Before / after
 
-| Chỉ số               |                                         Trước |                                                                                                                                                                                  Sau (kỳ vọng) | Ghi chú                                                                                                          |
-| -------------------- | --------------------------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ---------------------------------------------------------------------------------------------------------------- |
-| Số bước              |                                             6 |                                                                                                                                                                                              7 | Thêm bước kiểm tự động (bước 4) và bước sửa theo báo lỗi (bước 5)                                                |
-| Tổng thời gian       |              ~80–100' ngoài thời gian làm bài |                                                                                                                                                                                        ~75–95' | Thời gian gần như không đổi; cái đổi là **thời điểm phát hiện lỗi**: từ sát deadline sang ngay lần push đầu tiên |
-| Số bước thủ công     |                                             6 |                                                                                                                                                                                              6 | Bước tự rút quy định (bước 3 cũ) được thay bằng checklist có sẵn + kiểm tự động                                  |
-| Bottleneck chính     | Bước 3: tự rút quy định từ 11 file, dễ bỏ sót |                                                                                                                                                          Bước 6: đối chiếu nội dung với rubric | Phần định dạng được Rule xử lý; phần nội dung chưa giải, ghi vào hướng tiếp theo                                 |
-| Rủi ro mới phát sinh |                                             — | Bộ kiểm báo nhầm hoặc lỗi thời khi đề sửa sát giờ (đề Day 02 có 12 commit sửa trong ~14 giờ trước lab); học viên coi "xanh" là đủ và bỏ qua kiểm nội dung; repo fork phải bật Actions thủ công | Xử lý ở tiêu chí đánh giá (mục 7) và ngưỡng dừng (mục 8)                                                         |
+| Chỉ số | Trước | Sau (kỳ vọng) | Ghi chú |
+|---|---:|---:|---|
+| Số bước | 6 | 9 | Thêm bật rào cản (1 lần/repo), kiểm trên máy khi push, sửa theo báo lỗi, kiểm lại trên repo |
+| Tổng thời gian | ~80–100' ngoài thời gian làm bài | ~75–95' | Thời gian gần như không đổi; cái đổi là **thời điểm phát hiện lỗi**: từ sát deadline sang **trước khi bài lên repo** |
+| Số bước thủ công | 6 | 7 | Thêm 1 bước bật rào cản (chỉ 1 lần); bước tự rút quy định (bước 3 cũ) được thay bằng checklist có sẵn + kiểm tự động |
+| Lỗi sai quy cách lên được repo | Có, không ai chặn | Chỉ khi vượt rào bằng `--no-verify` hoặc chưa bật hook; Actions vẫn bắt lại | Rào cản chuyển từ "báo sau" sang "chặn trước" |
+| Bottleneck chính | Bước 3: tự rút quy định từ 11 file, dễ bỏ sót | Bước 8: đối chiếu nội dung với rubric | Phần định dạng được Rule xử lý; phần nội dung chưa giải, ghi vào hướng tiếp theo |
+| Rủi ro mới phát sinh | — | **Chặn nhầm sát deadline** làm không push được bài (rủi ro lớn nhất, xử lý bằng quyền vượt rào); hook chỉ chạy khi mỗi người tự bật trên máy mình; bộ kiểm lỗi thời khi đề sửa sát giờ (đề Day 02 có 12 commit sửa trong ~14 giờ trước lab); học viên coi "qua được rào" là đủ và bỏ qua kiểm nội dung | Xử lý ở boundary (mục 4.2), tiêu chí đánh giá (mục 7) và ngưỡng dừng (mục 8) |
 
 ---
 
@@ -282,16 +289,16 @@ Vì sao:
 
 ### 6.2. So sánh 4 mức
 
-| Mức                       | Phương án cho bài của nhóm                                                                                     | Đủ khi nào                                                           | Rủi ro                                                                                                       | Chọn?         |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------------- |
-| **No AI** (sửa quy trình) | Checklist "Phải nộp gì" ở đầu README, mỗi dòng trích dẫn file gốc; 1 thành viên soát chéo trước deadline 1 giờ | Học viên đọc và tick đủ checklist                                    | Chỉ nhắc, không kiểm: template Day 02 đã ghi rõ "Sửa cả dòng tiêu đề phía trên cho khớp" mà 2/4 file vẫn sai | Có, làm nền   |
-| **Rule**                  | GitHub Actions chạy khi push + ls-lint kiểm tên file; script kiểm tên repo, tiêu đề, mục bắt buộc              | Quy định có đúng/sai rõ: đủ cho cả 3 lỗi đã xảy ra ở Day 02          | Báo nhầm khi rule viết sai; lỗi thời khi đề sửa sát giờ; repo fork phải bật Actions                          | **Có**        |
-| **Workflow**              | Script lấy bài + rubric, AI đánh giá mục nào còn thiếu ý                                                       | Khi cần kiểm **nội dung** (đủ ý, có số liệu)                         | Mơ hồ cao, chưa có tiêu chí "đủ ý" rõ; AI báo "đủ" khi chưa đủ làm học viên chủ quan                         | Không, để sau |
-| **Agent**                 | AI tự đọc đề, tự sửa tên, tự sửa bài, tự commit                                                                | Không có trường hợp nào trong bài này cần AI tự quyết bước tiếp theo | Tự sửa bài và tự commit vi phạm quy định "không viết hộ"; sai thì mất điểm thật                              | Không         |
+| Mức | Phương án cho bài của nhóm | Đủ khi nào | Rủi ro | Chọn? |
+|---|---|---|---|---|
+| **No AI** (sửa quy trình) | Checklist "Phải nộp gì" ở đầu README, mỗi dòng trích dẫn file gốc; 1 thành viên soát chéo trước deadline 1 giờ | Học viên đọc và tick đủ checklist | Chỉ nhắc, không kiểm: template Day 02 đã ghi rõ "Sửa cả dòng tiêu đề phía trên cho khớp" mà 2/4 file vẫn sai | Có, làm nền |
+| **Rule** | Hook `pre-push` trên máy học viên: chặn push khi sai quy cách, nhắc các mục nội dung khi đúng quy cách; GitHub Actions + ls-lint kiểm lại trên repo làm lưới an toàn | Quy định có đúng/sai rõ: đủ cho cả 3 lỗi đã xảy ra ở Day 02 | Chặn nhầm sát deadline; mỗi người phải tự bật hook; lỗi thời khi đề sửa sát giờ; repo fork phải bật Actions | **Có** |
+| **Workflow** | Script lấy bài + rubric, AI đánh giá mục nào còn thiếu ý | Khi cần kiểm **nội dung** (đủ ý, có số liệu) | Mơ hồ cao, chưa có tiêu chí "đủ ý" rõ; AI báo "đủ" khi chưa đủ làm học viên chủ quan | Không, để sau |
+| **Agent** | AI tự đọc đề, tự sửa tên, tự sửa bài, tự commit | Không có trường hợp nào trong bài này cần AI tự quyết bước tiếp theo | Tự sửa bài và tự commit vi phạm quy định "không viết hộ"; sai thì mất điểm thật | Không |
 
 **Mức chọn:** Rule, kèm checklist (No AI) làm nền.
 
-**Vì sao không chọn mức đơn giản hơn:** No AI (checklist) đã có sẵn dạng ghi chú trong template nhưng vẫn bị bỏ sót: 2/4 file báo cáo cá nhân Day 02 có tiêu đề chưa khớp tên file dù template ghi rõ yêu cầu. Checklist chỉ nhắc, còn lỗi chỉ hết khi có bước **kiểm** tự động chạy mỗi lần push.
+**Vì sao không chọn mức đơn giản hơn:** No AI (checklist) đã có sẵn dạng ghi chú trong template nhưng vẫn bị bỏ sót: 2/4 file báo cáo cá nhân Day 02 có tiêu đề chưa khớp tên file dù template ghi rõ yêu cầu. Checklist chỉ nhắc, còn lỗi chỉ hết khi có bước **kiểm** tự động chạy mỗi lần push. Nhóm chọn **chặn trước khi push** thay vì chỉ báo sau khi push: báo sau (Actions) hiện dấu ✗ trên repo nhưng bài sai đã lên rồi và học viên dễ không để ý; chặn ở pre-push đưa lỗi ra đúng lúc học viên đang chủ động nộp. Đây là giả định, sẽ kiểm trong pilot bằng số lỗi lọt lên repo.
 
 **Vì sao không lên Workflow:** sau kiểm chứng, problem đã thu hẹp về lỗi định dạng, vốn có đúng/sai rõ. Phần kiểm nội dung theo rubric chưa có tiêu chí đạt/không đạt đủ rõ để đánh giá AI (dấu hiệu nên chọn Not Yet cho phần đó).
 
@@ -303,42 +310,42 @@ Không điền vì nhóm chọn Rule. Bài toán không cần AI dự đoán hay
 
 Không áp dụng vì không có bước AI. Với giải pháp Rule, nhóm vẫn xét kiểu sai:
 
-- **Augment hay automate:** học viên vẫn tự sửa và tự nộp; bộ kiểm chỉ báo lỗi (augment). Lý do: quy định "không viết hộ" và mỗi người phải commit bằng tài khoản của mình.
-- **Báo nhầm hay bỏ sót tệ hơn:** **bỏ sót** tệ hơn, vì lỗi lọt qua là bị trừ điểm thật, còn báo nhầm chỉ tốn vài phút kiểm lại. Thiết kế: rule viết theo hướng chặt, mỗi lỗi báo kèm trích dẫn file đề gốc để học viên tự đối chiếu khi nghi báo nhầm.
+- **Augment hay automate:** học viên vẫn tự sửa và tự nộp; bộ kiểm chặn và báo lỗi nhưng không sửa hộ (augment). Lý do: quy định "không viết hộ" và mỗi người phải commit bằng tài khoản của mình.
+- **Báo nhầm hay bỏ sót tệ hơn:** **bỏ sót** tệ hơn trong điều kiện bình thường, vì lỗi lọt qua là bị trừ điểm thật. Nhưng khi đã có rào cản thì **chặn nhầm sát deadline** còn tệ hơn cả bỏ sót, vì không push được thì bài không được chấm. Thiết kế: rule viết theo hướng chặt để không bỏ sót, mỗi lỗi kèm trích dẫn file đề gốc; đồng thời học viên luôn vượt rào được bằng `git push --no-verify`.
 
 ---
 
 ## 7. Problem Statement v1 + tiêu chí đánh giá (CP6)
 
-| Trường                                          | Nội dung                                                                                                                                                                                                                                                                                                            |
-| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Actor**                                       | Học viên AI20K làm lab cá nhân và nhóm trên repo GitHub, nộp link repo qua LMS                                                                                                                                                                                                                                      |
-| **Quy trình**                                   | Đọc checklist "Phải nộp gì" → đọc file chi tiết khi cần → làm bài, push → bộ kiểm tự chạy → tự sửa theo báo lỗi → tự đối chiếu nội dung với rubric → nộp (mục 4.2)                                                                                                                                                  |
-| **Bottleneck**                                  | Bước tự rút quy định nộp bài từ 11 file/1.325 dòng (không đổi so với v0)                                                                                                                                                                                                                                            |
-| **Impact**                                      | Mỗi lỗi tên repo/file có nguy cơ bị trừ 5 điểm; Day 02: 3 lỗi định dạng trong 1 repo nhóm 4 người; lỗi phát hiện muộn kéo theo sửa gấp sát giờ                                                                                                                                                                      |
-| **Success Metric** (baseline → target, cách đo) | (1) Số lỗi định dạng còn trong repo tại commit cuối trước deadline: 3/repo → 0. (2) Thời điểm phát hiện lỗi: sát deadline → ngay lần push đầu sau khi lỗi phát sinh. (3) Số lần bộ kiểm báo nhầm: chưa có → tối đa 1 lần/lab. Cách đo: log GitHub Actions + đếm tay theo checklist tại commit cuối, 3 lab tiếp theo |
-| **Boundary**                                    | Bộ kiểm chỉ báo lỗi: không đổi tên, không sửa file, không commit, không chấm nội dung. File đề là quy định chính thức khi có khác biệt. Học viên tự quyết định sửa gì                                                                                                                                               |
-| **AI intervention point**                       | Không có. Lý do: mọi quy định cần kiểm có đúng/sai rõ, Rule xử lý được cả 3 lỗi đã ghi nhận                                                                                                                                                                                                                         |
-| **Mức chọn**                                    | Rule (kèm checklist No AI làm nền)                                                                                                                                                                                                                                                                                  |
-| **Rủi ro & người kiểm tra**                     | Báo nhầm hoặc rule lỗi thời khi đề sửa sát giờ → người phụ trách bộ kiểm (nhóm trưởng) đối chiếu lại rule với file đề mỗi khi đề có commit mới; học viên coi "xanh" là đủ → checklist ghi rõ bộ kiểm không kiểm nội dung, bước 6 vẫn do học viên làm                                                                |
+| Trường | Nội dung |
+|---|---|
+| **Actor** | Học viên AI20K làm lab cá nhân và nhóm trên repo GitHub, nộp link repo qua LMS |
+| **Quy trình** | Đọc checklist "Phải nộp gì" → bật rào cản (1 lần/repo) → đọc file chi tiết khi cần → làm bài, commit → push, hook kiểm trên máy (sai thì chặn, đúng thì nhắc) → sửa, push lại → Actions kiểm lại trên repo → tự đối chiếu nội dung với rubric → nộp (mục 4.2) |
+| **Bottleneck** | Bước tự rút quy định nộp bài từ 11 file/1.325 dòng (không đổi so với v0) |
+| **Impact** | Mỗi lỗi tên repo/file có nguy cơ bị trừ 5 điểm; Day 02: 3 lỗi định dạng trong 1 repo nhóm 4 người; lỗi phát hiện muộn kéo theo sửa gấp sát giờ |
+| **Success Metric** (baseline → target, cách đo) | (1) Số lỗi định dạng còn trong repo tại commit cuối trước deadline: 3/repo → 0. (2) Thời điểm phát hiện lỗi: sát deadline → ngay lần push đầu sau khi lỗi phát sinh. (3) Số lần bộ kiểm chặn nhầm: chưa có → tối đa 1 lần/lab, 0 lần trong 1 giờ trước deadline. (4) Số lần push lên repo bị Actions báo lỗi (tức là đã vượt rào hoặc chưa bật hook): chưa có → 0. Cách đo: log GitHub Actions + thành viên báo lại mỗi lần bị chặn nhầm + đếm tay theo checklist tại commit cuối, 3 lab tiếp theo |
+| **Boundary** | Bộ kiểm được chặn push khi sai quy cách nhưng không đổi tên, không sửa file, không tự commit, không chấm nội dung. File đề là quy định chính thức khi có khác biệt. Học viên tự quyết định sửa gì và luôn được vượt rào bằng `git push --no-verify`; nộp được bài trước deadline được ưu tiên hơn đúng quy cách |
+| **AI intervention point** | Không có. Lý do: mọi quy định cần kiểm có đúng/sai rõ, Rule xử lý được cả 3 lỗi đã ghi nhận |
+| **Mức chọn** | Rule: rào cản pre-push + Actions kiểm lại (kèm checklist No AI làm nền) |
+| **Rủi ro & người kiểm tra** | Chặn nhầm sát deadline → học viên vượt rào bằng `--no-verify`, báo nhóm trưởng sửa rule; rule lỗi thời khi đề sửa sát giờ → nhóm trưởng đối chiếu lại rule với file đề mỗi khi đề có commit mới; thành viên quên bật hook → Actions bắt lại trên repo, nhóm trưởng nhắc trong chat nhóm; học viên coi "qua được rào" là đủ → lời nhắc khi push ghi rõ bộ kiểm không kiểm nội dung, bước đối chiếu rubric vẫn do học viên làm |
 
 **Thay đổi so với v0 và lý do:**
 
-| Trường         | v0                                | v1                                                               | Vì sao đổi                                                                                |
-| -------------- | --------------------------------- | ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| Success Metric | 2 chỉ số, đếm tay tại commit cuối | Thêm chỉ số (3) số lần báo nhầm; cách đo thêm log GitHub Actions | Khi đã chọn Rule thì phải đo cả kiểu sai mới của giải pháp, không chỉ đo lỗi của học viên |
-| Boundary       | Giới hạn chung cho mọi công cụ    | Cụ thể cho bộ kiểm: chỉ báo lỗi, file đề là quy định chính thức  | Đã chọn giải pháp nên boundary phải gắn với đúng công cụ                                  |
-| Quy trình      | 6 bước hiện tại                   | 7 bước tương lai, có bước kiểm tự động                           | Thêm bước kiểm để thay cho việc tự rút quy định bằng trí nhớ                              |
+| Trường | v0 | v1 | Vì sao đổi |
+|---|---|---|---|
+| Success Metric | 2 chỉ số, đếm tay tại commit cuối | Thêm (3) số lần chặn nhầm và (4) số push sai quy cách lọt lên repo; cách đo thêm log GitHub Actions | Khi đã chọn Rule có rào cản thì phải đo cả kiểu sai mới của giải pháp (chặn nhầm) và chỗ rào cản bị bỏ qua, không chỉ đo lỗi của học viên |
+| Boundary | Giới hạn chung cho mọi công cụ | Bộ kiểm được chặn push nhưng không sửa gì; học viên luôn được vượt rào; nộp được bài ưu tiên hơn đúng quy cách | Rào cản có thể cản học viên nộp bài, nên phải ghi rõ ai có quyền vượt rào và khi nào |
+| Quy trình | 6 bước hiện tại | 9 bước tương lai: rào cản trên máy + kiểm lại trên repo | Chỉ báo sau khi push thì bài sai đã lên repo; chặn trước khi push đưa lỗi ra đúng lúc học viên đang nộp |
 
 **Tiêu chí đánh giá đầu ra của giải pháp Rule (3–5 tiêu chí):**
 
-|   # | Tiêu chí        | Đạt khi                                                                                                                                                | Không đạt khi                                     |
-| --: | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- |
-|   1 | Không bỏ sót    | Bắt được 100% lỗi trong bộ test dựng từ lỗi thật: repo tên `Day02`, tiêu đề còn `MSSV_HoTen`, MSSV thiếu tiền tố `2A`, file báo cáo thiếu mục bắt buộc | Lọt bất kỳ lỗi nào trong bộ test                  |
-|   2 | Không báo nhầm  | Repo và file đúng chuẩn thì không báo lỗi nào; tối đa 1 lần báo nhầm/lab trong pilot                                                                   | Báo lỗi trên file đúng chuẩn từ 2 lần/lab trở lên |
-|   3 | Báo lỗi dễ hiểu | Mỗi lỗi ghi rõ file nào, vi phạm quy định nào, trích dẫn dòng trong file đề gốc                                                                        | Chỉ báo "failed" mà không nói sai ở đâu           |
-|   4 | Kịp thời        | Kết quả có trong vòng 2 phút sau mỗi lần push                                                                                                          | Không chạy, hoặc chỉ chạy khi có người bấm tay    |
-|   5 | Theo kịp đề     | Khi đề có commit sửa quy định nộp bài, rule được cập nhật trước khi lab bắt đầu                                                                        | Rule kiểm theo quy định cũ đã bị sửa              |
+| # | Tiêu chí | Đạt khi | Không đạt khi |
+|---:|---|---|---|
+| 1 | Không bỏ sót | Bắt được 100% lỗi trong bộ test dựng từ lỗi thật: repo tên `Day02`, tiêu đề còn `MSSV_HoTen`, MSSV thiếu tiền tố `2A`, file báo cáo thiếu mục bắt buộc | Lọt bất kỳ lỗi nào trong bộ test |
+| 2 | Không chặn nhầm | Repo và file đúng chuẩn thì luôn push được; tối đa 1 lần chặn nhầm/lab trong pilot, 0 lần trong 1 giờ trước deadline | Chặn push trên file đúng chuẩn từ 2 lần/lab trở lên, hoặc chặn nhầm sát deadline |
+| 3 | Báo lỗi và nhắc nhở dễ hiểu | Mỗi lỗi ghi rõ file nào, vi phạm quy định nào, trích dẫn dòng trong file đề gốc; khi đúng quy cách vẫn in lời nhắc các mục nội dung chưa được kiểm | Chỉ báo "failed" mà không nói sai ở đâu; hoặc qua rào mà không có lời nhắc nội dung |
+| 4 | Chặn kịp thời, không cản nộp bài | Hook chạy xong trong < 10 giây khi push; `git push --no-verify` luôn vượt được rào; Actions có kết quả trong < 2 phút | Hook chạy lâu làm học viên tắt hẳn; không có cách vượt rào khi bộ kiểm sai |
+| 5 | Theo kịp đề | Khi đề có commit sửa quy định nộp bài, rule được cập nhật trước khi lab bắt đầu | Rule kiểm theo quy định cũ đã bị sửa |
 
 ---
 
@@ -346,26 +353,26 @@ Không áp dụng vì không có bước AI. Với giải pháp Rule, nhóm vẫ
 
 ### 8.1. Bốn rủi ro
 
-| Rủi ro          | Câu hỏi                                                           | Mức độ rủi ro (Thấp = an toàn / TB / Cao = nguy hiểm) | Lý do / bằng chứng                                                                                                                                                                                                    |
-| --------------- | ----------------------------------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Value**       | Người dùng có thật sự cần và sẽ dùng không?                       | TB                                                    | Lỗi định dạng xảy ra thật ngay trong nhóm (3 lỗi ở Day 02, 2 lỗi xảy ra dù template đã ghi rõ yêu cầu). Chưa có phỏng vấn nhóm khác nên chưa biết pain có phổ biến cả lớp không                                       |
-| **Usability**   | Người dùng có dùng được, có hiểu và sửa được đầu ra của AI không? | Thấp                                                  | Học viên đã quen push lên GitHub; kết quả hiện ngay trên repo dạng đạt/không đạt, mỗi lỗi chỉ rõ file và quy định nên tự sửa được                                                                                     |
-| **Feasibility** | Có đủ dữ liệu, công cụ, kỹ năng để làm không?                     | Thấp                                                  | Công cụ có sẵn (GitHub Actions, ls-lint có Action chính thức, mục 3.3); runner chuẩn miễn phí cho repo public; quy định cần kiểm đều có trong file đề. Cần thêm thời gian viết script, ước tính vài giờ, chưa làm thử |
-| **Viability**   | Có hợp chi phí, pháp lý, quy định tổ chức không? Ai vận hành?     | TB                                                    | Trong repo nhóm: nhóm trưởng vận hành, không tốn phí. Muốn đưa vào repo đề cho cả lớp thì cần ban tổ chức đồng ý (giả định #5, chưa hỏi); đề sửa sát giờ nên phải có người cập nhật rule mỗi lab                      |
+| Rủi ro | Câu hỏi | Mức độ rủi ro (Thấp = an toàn / TB / Cao = nguy hiểm) | Lý do / bằng chứng |
+|---|---|---|---|
+| **Value** | Người dùng có thật sự cần và sẽ dùng không? | TB | Lỗi định dạng xảy ra thật ngay trong nhóm (3 lỗi ở Day 02, 2 lỗi xảy ra dù template đã ghi rõ yêu cầu). Chưa có phỏng vấn nhóm khác nên chưa biết pain có phổ biến cả lớp không |
+| **Usability** | Người dùng có dùng được, có hiểu và sửa được đầu ra của AI không? | TB | Lỗi hiện ngay lúc push, chỉ rõ file và quy định nên tự sửa được. Nhưng hook không tự đi theo repo: mỗi người phải tự chạy 1 lệnh bật trên máy mình, quên bật thì rào cản không có tác dụng; người mới bị chặn push lần đầu dễ bối rối |
+| **Feasibility** | Có đủ dữ liệu, công cụ, kỹ năng để làm không? | Thấp | Git hỗ trợ sẵn hook pre-push (exit khác 0 là hủy push) và `core.hooksPath` để dùng chung thư mục hook trong repo; GitHub Actions, ls-lint có Action chính thức (mục 3.3); runner chuẩn miễn phí cho repo public. Cần thêm thời gian viết script, ước tính vài giờ, chưa làm thử |
+| **Viability** | Có hợp chi phí, pháp lý, quy định tổ chức không? Ai vận hành? | TB | Trong repo nhóm: nhóm trưởng vận hành, không tốn phí. Muốn đưa vào repo đề cho cả lớp thì cần ban tổ chức đồng ý (giả định #5, chưa hỏi); đề sửa sát giờ nên phải có người cập nhật rule mỗi lab |
 
 ### 8.2. Kết luận
 
-**Quyết định:** **Go, phạm vi nhỏ** — dùng Rule (bộ kiểm tự động + checklist), **không dùng AI**.
+**Quyết định:** **Go, phạm vi nhỏ** — dùng Rule (rào cản pre-push + Actions kiểm lại + checklist), **không dùng AI**.
 
-**Lý do:** không rủi ro nào ở mức Cao; problem đã thu hẹp về lỗi định dạng có đúng/sai rõ; công cụ Rule có sẵn và miễn phí; bằng chứng cho thấy checklist đơn thuần (No AI) đã không đủ. Value còn ở mức TB vì chưa phỏng vấn nhóm khác, nên pilot giới hạn trong repo nhóm trước khi đề xuất cho cả lớp.
+**Lý do:** không rủi ro nào ở mức Cao; problem đã thu hẹp về lỗi định dạng có đúng/sai rõ; công cụ Rule có sẵn và miễn phí; bằng chứng cho thấy checklist đơn thuần (No AI) đã không đủ. Value và Usability còn ở mức TB (chưa phỏng vấn nhóm khác; mỗi người phải tự bật hook), nên pilot giới hạn trong repo nhóm trước khi đề xuất cho cả lớp.
 
-**Nếu Go — pilot nhỏ nhất:** trong repo nhóm NhanToBiAn, 3 lab tiếp theo: (1) checklist "Phải nộp gì" ở đầu README nhóm, mỗi dòng trích dẫn file đề; (2) 1 workflow GitHub Actions chạy khi push, kiểm 4 quy định: tên repo, tên file `MSSV_HoTen.md`, tiêu đề khớp tên file, đủ các mục bắt buộc và không trống. Nhóm trưởng phụ trách cập nhật rule khi đề sửa.
+**Nếu Go — pilot nhỏ nhất:** trong repo nhóm NhanToBiAn, 3 lab tiếp theo: (1) checklist "Phải nộp gì" ở đầu README nhóm, mỗi dòng trích dẫn file đề; (2) thư mục `.githooks/` chứa hook `pre-push` kiểm 4 quy định (tên repo, tên file `MSSV_HoTen.md`, tiêu đề khớp tên file, đủ các mục bắt buộc và không trống): sai thì chặn, đúng thì in lời nhắc phần nội dung; mỗi thành viên chạy `git config core.hooksPath .githooks` một lần; (3) 1 workflow GitHub Actions chạy lại cùng 4 phép kiểm trên repo làm lưới an toàn. Nhóm trưởng phụ trách cập nhật rule khi đề sửa.
 
 **Nếu Not Yet — cần kiểm chứng gì trước:** áp dụng cho phần **kiểm nội dung theo rubric** (Workflow có AI): cần phỏng vấn 2–3 học viên nhóm khác (mục 3.2) và viết được tiêu chí "mục đủ ý" trước khi cân nhắc.
 
 **Nếu No-Go — nên làm gì thay AI:** áp dụng cho việc dùng AI ở phần định dạng: không cần, Rule đã đủ.
 
-**Ngưỡng dừng:** nếu sau 3 lab mà vẫn còn lỗi định dạng lọt tới commit cuối, hoặc bộ kiểm báo nhầm từ 2 lần/lab trở lên, thì quay về checklist tick tay + 1 thành viên soát chéo trước deadline 1 giờ. Nếu phỏng vấn cho thấy nhóm khác không gặp lỗi định dạng, giữ pilot trong nhóm, không đề xuất cho cả lớp.
+**Ngưỡng dừng:** nếu có lần nào hook chặn nhầm khiến thành viên không push được trong 1 giờ trước deadline, hoặc chặn nhầm từ 2 lần/lab trở lên, thì **bỏ chặn**, chuyển hook về chế độ chỉ nhắc (cảnh báo nhưng vẫn cho push). Nếu sau 3 lab mà vẫn còn lỗi định dạng lọt tới commit cuối, thì quay về checklist tick tay + 1 thành viên soát chéo trước deadline 1 giờ. Nếu phỏng vấn cho thấy nhóm khác không gặp lỗi định dạng, giữ pilot trong nhóm, không đề xuất cho cả lớp.
 
 ---
 
@@ -383,5 +390,6 @@ Không áp dụng vì không có bước AI. Với giải pháp Rule, nhóm vẫ
 - [GitHub Docs — Actions quickstart](https://docs.github.com/en/actions/writing-workflows/quickstart)
 - [GitHub Docs — About billing for GitHub Actions](https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-actions/about-billing-for-github-actions)
 - [ls-lint](https://ls-lint.org/) · [ls-lint GitHub Action](https://github.com/ls-lint/action)
-- Rob Fitzpatrick — _The Mom Test_; David Bland — _Testing Business Ideas_ (Assumption Map); Teresa Torres — Opportunity Solution Tree; Jeff Gothelf — _Lean UX_; Google PAIR Guidebook; Anthropic — _Building Effective Agents_; Marty Cagan (SVPG) — 4 rủi ro (theo [docs/01-worksheet.md](../../docs/01-worksheet.md))
+- [Git — githooks (pre-push, core.hooksPath)](https://git-scm.com/docs/githooks) · [Git — git-push (--no-verify)](https://git-scm.com/docs/git-push)
+- Rob Fitzpatrick — *The Mom Test*; David Bland — *Testing Business Ideas* (Assumption Map); Teresa Torres — Opportunity Solution Tree; Jeff Gothelf — *Lean UX*; Google PAIR Guidebook; Anthropic — *Building Effective Agents*; Marty Cagan (SVPG) — 4 rủi ro (theo [docs/01-worksheet.md](../../docs/01-worksheet.md))
 - Git log các repo lab Day 01, Day 02 của thành viên nhóm; lịch sử commit repo đề Day 02
