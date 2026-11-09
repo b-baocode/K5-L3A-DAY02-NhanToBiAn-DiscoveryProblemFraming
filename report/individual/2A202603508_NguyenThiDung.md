@@ -174,13 +174,13 @@ mơ hồ; mọi trường hợp không chắc chắn phải chuyển người c�
 | Hoạt động | Tôi đã làm gì? | Kết quả / ảnh hưởng tới bài nhóm |
 |---|---|---|
 | Pitch Problem Card | Problem Card	Tôi đưa ra 3 candidate: (1) hỗ trợ bác sĩ ưu tiên xem xét ảnh X-quang/MRI có dấu hiệu bất thường; (2) hỗ trợ researcher/AI Engineer tìm kiếm và đối chiếu tài liệu nghiên cứu tại VRIC; (3) kiểm tra tính đầy đủ, nhất quán giữa ảnh y khoa, metadata và kết luận chuyên môn. | Ba candidate được ghi nhận tại mục 2.1, các dòng #10–#12 của báo cáo nhóm. |
-| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: | |
-| Nhận phản biện | Câu hỏi tôi nhận được: | Tôi đã sửa gì: |
+| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: | Đặt câu hỏi về tính khả thi khi tiếp cận dữ liệu |
+| Nhận phản biện | Câu hỏi tôi nhận được: về việc các card y khoa có scope quá rộng và khó đo đạc baseline nếu không tiếp cận được hệ thống PACS/bệnh viện. | Tôi đã sửa gì: Thừa nhận điểm yếu của giả thuyết và đồng ý chuyển hướng tập trung vào problem sát với thực tế học viên lớp AI20K hơn. |
 | Gom cluster / cây OST | | |
 | Chọn candidate problem | Tôi pitch 3 candidate nêu trên và tham gia quá trình hội tụ của nhóm. | Nhóm chọn Candidate A — hiểu yêu cầu và nộp lab đúng chuẩn, gộp các candidate #1, #3 của Bảo và #4 của Ba. Ba candidate của tôi không được chọn làm problem trung tâm do nhóm chưa tiếp cận được bác sĩ/PACS/dữ liệu y khoa, còn baseline literature review và kiểm tra dữ liệu chưa được đo. |
-| Kiểm chứng / research | Báo cáo nhóm ghi nhận các phương pháp kiểm chứng ở cấp nhóm: xem Git log, kiểm tra artefact trong repo và chuẩn bị phỏng vấn học viên nhóm khác; phần research xem xét GitHub Actions, ls-lint và GitHub Classroom autograding. | |
+| Kiểm chứng / research | Góp ý vào quá trình rà soát lỗi thực tế trên các file báo cáo cá nhân và repo nhóm. | Cung cấp bằng chứng thực tế  cho phần giả định và research của nhóm.  |
 | Quy trình nhóm | | |
-| Problem Statement | | |
+| Problem Statement | Thống nhất chốt phương án Go, phạm vi nhỏ — Rule (không dùng AI) để giải quyết lỗi định dạng. | Giúp nhóm đưa ra quyết định thực tế, vừa sức, tránh sa đà vào giải pháp AI phức tạp không cần thiết. |
 | Mức can thiệp AI | | |
 | Quyết định | | |
 
@@ -190,13 +190,12 @@ mơ hồ; mọi trường hợp không chắc chắn phải chuyển người c�
 
 | Checkpoint | Tôi dùng AI để làm gì? | AI hữu ích ở đâu? | AI sai hoặc hời hợt ở đâu? | Tôi sửa gì bằng nhận định của mình? |
 |---|---|---|---|---|
-| CP1 Scan | | | | |
-| CP2 Problem Card | | | | |
+| CP1 Scan | Tổng hợp các ý tưởng thô thành các Job Story chuẩn. | Gợi ý cách diễn đạt chuẩn theo cấu trúc Job Story. | Các bối cảnh y khoa bị khái quát hóa quá mức, thiếu chi tiết thực tế. | Viết lại chi tiết quy trình theo đúng thực tế chuyên môn thay vì để AI bịa ra các bước chung chung. |
+| CP2 Problem Card | Viết nháp các bước trong quy trình giả thuyết cho 3 Problem Card. | Nhanh chóng tạo khung các bước (steps) cho quy trình. | Thời gian ước lượng cho từng bước của AI chỉ là ngẫu nhiên, không có cơ sở đo lường thật. | Ghi rõ chú thích đây chỉ là giả thuyết và cần phải đo đạc thực tế. |
 | CP4 Research | | | | |
 | CP5 Quy trình | | | | |
 | CP5–6 Problem Statement | | | | |
-| CP6 Mức can thiệp / quyết định | | | | |
-
+| CP6 Mức can thiệp / quyết định | Tham khảo góc nhìn về việc khi nào nên dùng Rule thay vì AI. | Phân biệt rõ ràng giữa bài toán đúng/sai rõ ràng (Rule) và bài toán cần suy luận ngữ nghĩa (Workflow/Agent). | AI có xu hướng đề xuất dùng mô hình phức tạp (Agent/LLM) cho cả những việc đơn giản. | Giữ vững quan điểm chọn phương án Rule vì lỗi định dạng chỉ cần kiểm tra theo quy tắc tĩnh, không cần AI. |
 ---
 
 ## 6. Reflection (CP7)
@@ -204,18 +203,25 @@ mơ hồ; mọi trường hợp không chắc chắn phải chuyển người c�
 Trả lời bằng trải nghiệm thật của bạn, tối thiểu 200 từ cho các câu 6.1–6.6 (không tính 6.7, câu này được chấm riêng ở tiêu chí C5). **Không dùng AI để viết thay.**
 
 **6.1. Tôi học được gì khi nghe top 3 problems của các bạn khác?**
+Việc lắng nghe các bạn khác trong lớp chia sẻ giúp tôi mở rộng góc nhìn ra khỏi những bài toán kỹ thuật chuyên sâu (như y khoa hay nghiên cứu) để nhìn nhận những pain rất thực tế ngay trong chính lớp học, ví dụ như việc đọc đề và nộp bài lab đúng hạn. Tôi nhận ra rằng một problem tốt không nhất thiết phải đao to búa lớn, mà quan trọng nhất là phải có actor rõ ràng, có bằng chứng hành vi đo đạc được và gần gũi với người sử dụng.
 
 **6.2. Nhóm có lúc nào bị "solution-first" (nghĩ giải pháp trước khi hiểu vấn đề) không? Lúc đó nhóm nhận ra và xử lý thế nào?**
+Có, ban đầu khi mới bắt đầu, một số thành viên trong nhóm có xu hướng nghĩ ngay đến việc xây dựng một chatbot hoặc một script tự động hóa phức tạp để giải quyết mọi thứ. Tuy nhiên, khi đối chiếu với các bước kiểm chứng giả định và log thực tế (như git log và các lỗi định dạng ngay trong repo nhóm), nhóm đã kịp thời nhận ra rằng mình đang vẽ giải pháp trước khi hiểu rõ bottleneck thực sự. Nhóm đã quay lại thu hẹp vấn đề về việc "bỏ sót quy định nộp bài" và đánh giá đúng mức can thiệp cần thiết là Rule thay vì dùng AI.
 
 **6.3. Tôi có đổi ý sau khi bị phản biện không? Kể một lần cụ thể.**
+Có. Ban đầu tôi rất tâm huyết với các bài toán liên quan đến xử lý ảnh y khoa và literature review. Tuy nhiên, sau khi nhận được phản biện từ nhóm và các bạn về việc chúng ta không có đủ thời gian và quyền truy cập dữ liệu thực tế để kiểm chứng trong phạm vi buổi lab, tôi đã thay đổi góc nhìn. Tôi nhận thấy việc cố giữ các bài toán lớn đó sẽ khiến báo cáo trở nên xa rời thực tế và không thể kiểm chứng được. Do đó, tôi đã hoàn toàn ủng hộ việc chọn candidate của nhóm về quy trình nộp lab.
 
 **6.4. Kết quả kiểm chứng (phỏng vấn/survey/research) có làm tôi bất ngờ không? Điều gì?**
+Điều làm tôi bất ngờ nhất là khi phỏng vấn nhanh các học viên khác, không phải ai cũng quá mặn mà hay cảm thấy lỗi định dạng là một pain quá lớn đối với họ. Điều này buộc nhóm phải điều chỉnh phạm vi: không áp dụng giải pháp cho cả lớp mà thu hẹp lại phạm vi triển khai chỉ trong nội bộ nhóm NhanToBiAn dưới dạng pilot nhỏ.
 
 **6.5. Điều khó nhất khi viết Problem Statement là gì?**
+Điều khó nhất là phải cô đọng được một lượng lớn thông tin phức tạp thành một tuyên bố ngắn gọn nhưng chính xác, bao gồm đầy đủ actor, quy trình, bottleneck, impact cụ thể và đặc biệt là phải thiết lập được Success Metric có thể đo lường được chứ không được viết chung chung.
 
 **6.6. Nếu làm lại, tôi sẽ đổi gì? Tôi sẽ phản biện nhóm mạnh hơn ở điểm nào?**
+Nếu làm lại, tôi sẽ chủ động đề xuất việc thu thập số liệu định lượng (như đếm chính xác thời gian và số lỗi thực tế từ các lab trước của nhiều thành viên hơn) ngay từ đầu thay vì dựa nhiều vào các ước tính cảm tính. Tôi cũng sẽ phản biện nhóm mạnh hơn ở khâu thiết kế bộ eval để đảm bảo các tiêu chí kiểm tra rào cản pre-push phủ kín mọi tình huống lỗi có thể phát sinh.
 
 **6.7. Hiểu bài:** giải thích bằng 5–8 câu, không nhìn tài liệu, chuỗi *problem → quy trình → metric → boundary → mức can thiệp AI → quyết định* của bài nhóm mình.
+Chuỗi bài toán của nhóm bắt đầu từ việc nhận diện problem thực tế là học viên thường xuyên bỏ sót các quy định nộp bài nằm rải rác ở nhiều file và chỉ phát hiện khi đã sát deadline. Quy trình hiện tại bị nghẽn ở bước tự rút quy định từ tài liệu dẫn đến thiếu sót. Metric thành công được đo bằng số lỗi định dạng còn lại trong repo giảm về 0 và thời gian phát hiện lỗi dịch chuyển từ sát deadline sang ngay khi push code. Boundary quy định rằng bộ kiểm chỉ có quyền chặn push chứ không được tự sửa file, và học viên luôn có quyền vượt rào bằng no-verify khi cần thiết. Xét về mức can thiệp AI, nhóm quyết định không dùng AI mà dùng phương án Rule (rào cản pre-push kết hợp GitHub Actions và checklist) vì các lỗi định dạng có tính đúng/sai rõ ràng. Quyết định cuối cùng của nhóm là Go với phạm vi nhỏ, chạy pilot nội bộ trong nhóm để kiểm chứng hiệu quả trước khi cân nhắc mở rộng.
 
 ---
 

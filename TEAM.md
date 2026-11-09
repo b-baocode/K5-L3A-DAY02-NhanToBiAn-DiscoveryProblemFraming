@@ -110,3 +110,24 @@ Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `
 **Điều mình học được từ phần nhóm:**
 
 -
+### NguyenThiDung-2A202603508
+
+**Phần việc phụ trách:**
+
+- CP1–CP2 cá nhân: scan 8 problem (tập trung vào lĩnh vực ảnh y khoa, literature review và xử lý dữ liệu), viết 3 Problem Card kèm quy trình nháp
+- Pitch 3 card trong buổi hội tụ nhóm (CP3)
+- Tham gia đóng góp ý kiến cho các checkpoint tiếp theo của nhóm
+
+**Đóng góp cụ thể** (mình đã làm gì, ra sản phẩm gì):
+
+- Đưa ra 3 candidate
+- Cả 3 candidate đều đóng góp vào góc nhìn chuyên môn, giúp làm phong phú thêm kho dữ liệu ý tưởng của nhóm trong buổi hội tụ (CP3).
+
+**Bằng chứng** (phần nào trong `group_report.md`, file nào trong `report/assets/`, commit nào):
+
+- `report/individual/2A202603508_NguyenThiDung.md` mục 2 và 3
+- `group_report.md` mục 2.1 (dòng #10, #11, #12), mục 2.2 (cluster B, C, D)
+
+**Điều mình học được từ phần nhóm:**
+
+- Hiểu rõ hơn về cách quy nạp các problem khác nhau vào các cluster chung, cách xây dựng Opportunity Solution Tree và cách đánh giá, lựa chọn giải pháp thực tế (Rule/No AI) dựa trên bằng chứng và dữ liệu thực tế thay vì sa đà vào việc dùng AI cho mọi thứ.
